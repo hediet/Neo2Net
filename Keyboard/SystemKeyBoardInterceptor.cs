@@ -15,7 +15,7 @@ namespace ConsoleApplicationNeoTest
             if (inputKeyboard == null) throw new ArgumentNullException("inputKeyboard");
             this.inputKeyboard = inputKeyboard;
             this.suppress = suppress;
-
+            
             interceptor = new KeyboardInterceptor();
             interceptor.KeyDown += InterceptorOnKeyDown;
             interceptor.KeyUp += InterceptorOnKeyUp;

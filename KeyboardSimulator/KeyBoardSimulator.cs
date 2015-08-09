@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace ConsoleApplicationNeoTest
 {
-    class KeyBoardSimulator
+    class KeyboardSimulator
     {
 
         /// <summary>
@@ -83,6 +83,7 @@ namespace ConsoleApplicationNeoTest
             }
         }
 
+
         public static void Send(char character, KeyPressDirection pressDirection)
         {
             UInt16 scanCode = character;
@@ -103,7 +104,8 @@ namespace ConsoleApplicationNeoTest
 
         public static void Send(Keys keyCode, KeyPressDirection pressDirection)
         {
-            var flags = (KeyboardFlag)0;
+            //var flags = (KeyboardFlag)0;
+            var flags = IsExtendedKey(keyCode) ? KeyboardFlag.ExtendedKey : 0;
 
             if (pressDirection == KeyPressDirection.Up)
                 flags |= KeyboardFlag.KeyUp;

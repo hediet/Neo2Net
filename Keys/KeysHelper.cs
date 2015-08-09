@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Text;
 using System.Windows.Forms;
 
 namespace ConsoleApplicationNeoTest
@@ -53,10 +55,51 @@ namespace ConsoleApplicationNeoTest
         [DllImport("user32.dll")]
         private static extern uint MapVirtualKeyW(uint uCode, MapVirtualKeyMapTypes uMapType);
 
+        [DllImport("user32.dll")]
+        public static extern int ToUnicode(uint virtualKeyCode, uint scanCode,
+            byte[] keyboardState,
+            [Out, MarshalAs(UnmanagedType.LPWStr, SizeConst = 64)]
+            StringBuilder receivingBuffer,
+            int bufferSize, uint flags);
 
-        public static Keys Convert(uint scanCode)
+
+        static string GetCharsFromKeys(Keys key, bool shift, bool altGr)
+        {
+            var buf = new StringBuilder(256);
+            var keyboardState = new byte[256];
+            if (shift)
+                keyboardState[(int)Keys.ShiftKey] = 0xff;
+            if (altGr)
+            {
+                keyboardState[(int)Keys.ControlKey] = 0xff;
+                keyboardState[(int)Keys.Menu] = 0xff;
+            }
+            ToUnicode((uint)key, 0, keyboardState, buf, 256, 0);
+            return buf.ToString();
+        }
+
+        private static Dictionary<uint, Keys> keys2;
+
+        public static Keys ConvertFromScanCode(uint scanCode)
         {
             return (Keys)MapVirtualKeyW(scanCode, MapVirtualKeyMapTypes.MAPVK_VSC_TO_VK);
+
+            if (keys2 == null)
+            {
+                keys2 = new Dictionary<uint, Keys>();
+                foreach (var k in Enum.GetValues(typeof(Keys)).OfType<Keys>())
+                {
+                    var scanCode2 = ConvertToScanCode(k);
+                    if (!keys2.ContainsKey(scanCode2))
+                        keys2[scanCode2] = k;
+                    else
+                        Debugger.Break();
+                }
+            }
+
+            return keys2[scanCode];
+
+            
         }
 
         public static uint ConvertToScanCode(Keys keys)
@@ -66,24 +109,33 @@ namespace ConsoleApplicationNeoTest
 
         private static Dictionary<char, Keys> keys;
 
-        public static Keys? Convert(char character)
+
+        public static Keys Convert(char character)
         {
-            character = char.ToUpper(character);
             if (keys == null)
             {
                 keys = new Dictionary<char, Keys>();
                 foreach (var k in Enum.GetValues(typeof (Keys)).OfType<Keys>())
                 {
-                    var c = (char) MapVirtualKeyW((uint)k, MapVirtualKeyMapTypes.MAPVK_VK_TO_CHAR);
-                    if (c != 0)
-                        keys[c] = k;
+                    var c = GetCharsFromKeys(k, false, false);
+                    if (c.Length == 1)
+                        keys[c[0]] = k;
+
+                    c = GetCharsFromKeys(k, true, false);
+                    if (c.Length == 1)
+                        keys[c[0]] = k | Keys.Shift;
+
+                    c = GetCharsFromKeys(k, false, true);
+                    if (c.Length == 1)
+                        keys[c[0]] = k | Keys.Alt;
                 }
             }
 
             Keys result;
             if (keys.TryGetValue(character, out result))
                 return result;
-            return null;
+
+            return Keys.None;
         }
     }
 }

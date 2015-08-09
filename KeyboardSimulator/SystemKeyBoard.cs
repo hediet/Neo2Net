@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Threading;
+using System.Windows.Forms;
 
 namespace ConsoleApplicationNeoTest
 {
@@ -11,14 +13,15 @@ namespace ConsoleApplicationNeoTest
         public void KeyEvent(Key key, KeyPressDirection pressDirection)
         {
             counter++;
-            Console.WriteLine(pressDirection + " " + key);
+            if (key.KeyCode == Keys.Packet)
+                throw new Exception("Cannot send packet.");
             switch (key.KeyType)
             {
                 case KeyType.Character:
-                    KeyBoardSimulator.Send(key.Character, pressDirection);
+                    KeyboardSimulator.Send(key.Character, pressDirection);
                     break;
                 case KeyType.KeyCode:
-                    KeyBoardSimulator.Send(key.KeyCode, pressDirection);
+                    KeyboardSimulator.Send(key.KeyCode, pressDirection);
                     break;
                 default:
                     throw new Exception();

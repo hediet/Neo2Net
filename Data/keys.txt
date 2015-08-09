@@ -16,6 +16,8 @@
 # • Wrong Caps_Lock behaviour with ssharp (not returning to lower case when
 #   using Caps_Lock and Shift)
 #   See: https://bugzilla.kernel.org/show_bug.cgi?id=7063
+#
+#   http://www.qb64.net/wiki/index.php?title=Keyboard_scancodes
 
 #==========================================================================
 # Statements and defaults
@@ -669,7 +671,7 @@ shiftl  altgr   keycode  17 = VoidSymbol       #
 shiftr  altgr   keycode  17 = VoidSymbol       #  
 
         ctrll   keycode  18 = Up               # 
-shiftl  ctrll   keycode  18 = Up               # 
+shiftl  ctrll   keycode  18 = Up               #
 shiftr  ctrll   keycode  18 = Up               # 
 
         ctrll   keycode  19 = Remove           # 
@@ -728,184 +730,3 @@ shiftr  ctrll   keycode  47 = Return           #
 shiftl  ctrll   keycode  48 = VoidSymbol       # 
 shiftr  ctrll   keycode  48 = VoidSymbol       # 
 
-#==========================================================================
-# Keypad
-#==========================================================================
-
-                keycode  69 = Tab              # 
-        shiftl  keycode  69 = Tab              # 
-        shiftr  keycode  69 = Tab              # 
-        altgr   keycode  69 = equal            # = [U+003D] EQUALS SIGN
-        ctrll   keycode  69 = U+2260           # ≠ [U+2260] NOT EQUAL TO
-shiftl  ctrll   keycode  69 = U+2260           # ≠ [U+2260] NOT EQUAL TO
-shiftr  ctrll   keycode  69 = U+2260           # ≠ [U+2260] NOT EQUAL TO
-shiftl  altgr   keycode  69 = U+2248           # ≈ [U+2248] ALMOST EQUAL TO
-shiftr  altgr   keycode  69 = U+2248           # ≈ [U+2248] ALMOST EQUAL TO
-ctrll   altgr   keycode  69 = U+2261           # ≡ [U+2261] IDENTICAL TO
-
-                keycode  98 = KP_Divide        # / [U+002F] SOLIDUS
-        shiftl  keycode  98 = KP_Divide        # / [U+002F] SOLIDUS
-        shiftr  keycode  98 = KP_Divide        # / [U+002F] SOLIDUS
-        altgr   keycode  98 = division         # ÷ [U+00F7] DIVISION SIGN
-        ctrll   keycode  98 = U+2044           # ⁄ [U+2044] FRACTION SLASH
-shiftl  ctrll   keycode  98 = U+2044           # ⁄ [U+2044] FRACTION SLASH
-shiftr  ctrll   keycode  98 = U+2044           # ⁄ [U+2044] FRACTION SLASH
-shiftl  altgr   keycode  98 = U+2300           # ⌀ [U+2300] DIAMETER SIGN
-shiftr  altgr   keycode  98 = U+2300           # ⌀ [U+2300] DIAMETER SIGN
-ctrll   altgr   keycode  98 = U+2223           # ∣ [U+2223] DIVIDES
-
-                keycode  55 = KP_Multiply      # * [U+002A] ASTERISK
-        shiftl  keycode  55 = KP_Multiply      # * [U+002A] ASTERISK
-        shiftr  keycode  55 = KP_Multiply      # * [U+002A] ASTERISK
-        altgr   keycode  55 = U+22c5           # ⋅ [U+22C5] DOT OPERATOR
-        ctrll   keycode  55 = multiply         # × [U+00D7] MULTIPLICATION SIGN
-shiftl  ctrll   keycode  55 = multiply         # × [U+00D7] MULTIPLICATION SIGN
-shiftr  ctrll   keycode  55 = multiply         # × [U+00D7] MULTIPLICATION SIGN
-shiftl  altgr   keycode  55 = U+2299           # ⊙ [U+2299] CIRCLED DOT OPERATOR
-shiftr  altgr   keycode  55 = U+2299           # ⊙ [U+2299] CIRCLED DOT OPERATOR
-ctrll   altgr   keycode  55 = U+2297           # ⊗ [U+2297] CIRCLED TIMES
-
-                keycode  74 = KP_Subtract      # - [U+002D] HYPHEN-MINUS
-        shiftl  keycode  74 = KP_Subtract      # - [U+002D] HYPHEN-MINUS
-        shiftr  keycode  74 = KP_Subtract      # - [U+002D] HYPHEN-MINUS
-        altgr   keycode  74 = U+2212           # − [U+2212] MINUS SIGN
-        ctrll   keycode  74 = U+2216           # ∖ [U+2216] SET MINUS
-shiftl  ctrll   keycode  74 = U+2216           # ∖ [U+2216] SET MINUS
-shiftr  ctrll   keycode  74 = U+2216           # ∖ [U+2216] SET MINUS
-shiftl  altgr   keycode  74 = U+2296           # ⊖ [U+2296] CIRCLED MINUS
-shiftr  altgr   keycode  74 = U+2296           # ⊖ [U+2296] CIRCLED MINUS
-ctrll   altgr   keycode  74 = U+2238           # ∸ [U+2238] DOT MINUS
-
-                keycode  71 = KP_7             # 7 [U+0037] DIGIT SEVEN
-        shiftl  keycode  71 = U+2714           # ✔ [U+2714] HEAVY CHECK MARK
-        shiftr  keycode  71 = U+2714           # ✔ [U+2714] HEAVY CHECK MARK
-        altgr   keycode  71 = U+2195           # ↕ [U+2195] UP DOWN ARROW
-        ctrll   keycode  71 = Home             # 
-shiftl  ctrll   keycode  71 = Home             # 
-shiftr  ctrll   keycode  71 = Home             # 
-shiftl  altgr   keycode  71 = U+226a           # ≪ [U+226A] MUCH LESS-THAN
-shiftr  altgr   keycode  71 = U+226a           # ≪ [U+226A] MUCH LESS-THAN
-ctrll   altgr   keycode  71 = U+2308           # ⌈ [U+2308] LEFT CEILING
-
-                keycode  72 = KP_8             # 8 [U+0038] DIGIT EIGHT
-        shiftl  keycode  72 = U+2718           # ✘ [U+2718] HEAVY BALLOT X
-        shiftr  keycode  72 = U+2718           # ✘ [U+2718] HEAVY BALLOT X
-        altgr   keycode  72 = U+2191           # ↑ [U+2191] UPWARDS ARROW
-        ctrll   keycode  72 = Up               # 
-shiftl  ctrll   keycode  72 = Up               # 
-shiftr  ctrll   keycode  72 = Up               # 
-shiftl  altgr   keycode  72 = U+2229           # ∩ [U+2229] INTERSECTION
-shiftr  altgr   keycode  72 = U+2229           # ∩ [U+2229] INTERSECTION
-ctrll   altgr   keycode  72 = U+22c2           # ⋂ [U+22C2] N-ARY INTERSECTION
-
-                keycode  73 = KP_9             # 9 [U+0039] DIGIT NINE
-        shiftl  keycode  73 = U+2020           # † [U+2020] DAGGER
-        shiftr  keycode  73 = U+2020           # † [U+2020] DAGGER
-        altgr   keycode  73 = VoidSymbol       # 
-        ctrll   keycode  73 = Prior            # 
-shiftl  ctrll   keycode  73 = Prior            # 
-shiftr  ctrll   keycode  73 = Prior            # 
-shiftl  altgr   keycode  73 = U+226b           # ≫ [U+226B] MUCH GREATER-THAN
-shiftr  altgr   keycode  73 = U+226b           # ≫ [U+226B] MUCH GREATER-THAN
-ctrll   altgr   keycode  73 = U+2309           # ⌉ [U+2309] RIGHT CEILING
-
-                keycode  75 = KP_4             # 4 [U+0034] DIGIT FOUR
-        shiftl  keycode  75 = U+2663           # ♣ [U+2663] BLACK CLUB SUIT
-        shiftr  keycode  75 = U+2663           # ♣ [U+2663] BLACK CLUB SUIT
-        altgr   keycode  75 = U+2190           # ← [U+2190] LEFTWARDS ARROW
-        ctrll   keycode  75 = Left             # 
-shiftl  ctrll   keycode  75 = Left             # 
-shiftr  ctrll   keycode  75 = Left             # 
-shiftl  altgr   keycode  75 = U+2282           # ⊂ [U+2282] SUBSET OF
-shiftr  altgr   keycode  75 = U+2282           # ⊂ [U+2282] SUBSET OF
-ctrll   altgr   keycode  75 = U+2286           # ⊆ [U+2286] SUBSET OF OR EQUAL TO
-
-                keycode  76 = KP_5             # 5 [U+0035] DIGIT FIVE
-        shiftl  keycode  76 = U+20ac           # € [U+20AC] EURO SIGN
-        shiftr  keycode  76 = U+20ac           # € [U+20AC] EURO SIGN
-        altgr   keycode  76 = colon            # : [U+003A] COLON
-        ctrll   keycode  76 = VoidSymbol       # 
-shiftl  ctrll   keycode  76 = VoidSymbol       # 
-shiftr  ctrll   keycode  76 = VoidSymbol       # 
-shiftl  altgr   keycode  76 = U+22b6           # ⊶ [U+22B6] ORIGINAL OF
-shiftr  altgr   keycode  76 = U+22b6           # ⊶ [U+22B6] ORIGINAL OF
-ctrll   altgr   keycode  76 = U+22b7           # ⊷ [U+22B7] IMAGE OF
-
-                keycode  77 = KP_6             # 6 [U+0036] DIGIT SIX
-        shiftl  keycode  77 = U+2023           # ‣ [U+2023] TRIANGULAR BULLET
-        shiftr  keycode  77 = U+2023           # ‣ [U+2023] TRIANGULAR BULLET
-        altgr   keycode  77 = U+2192           # → [U+2192] RIGHTWARDS ARROW
-        ctrll   keycode  77 = Right            # 
-shiftl  ctrll   keycode  77 = Right            # 
-shiftr  ctrll   keycode  77 = Right            # 
-shiftl  altgr   keycode  77 = U+2283           # ⊃ [U+2283] SUPERSET OF
-shiftr  altgr   keycode  77 = U+2283           # ⊃ [U+2283] SUPERSET OF
-ctrll   altgr   keycode  77 = U+2287           # ⊇ [U+2287] SUPERSET OF OR EQUAL TO
-
-                keycode  78 = KP_Add           # + [U+002B] PLUS SIGN
-        shiftl  keycode  78 = KP_Add           # + [U+002B] PLUS SIGN
-        shiftr  keycode  78 = KP_Add           # + [U+002B] PLUS SIGN
-        altgr   keycode  78 = plusminus        # ± [U+00B1] PLUS-MINUS SIGN
-        ctrll   keycode  78 = U+2213           # ∓ [U+2213] MINUS-OR-PLUS SIGN
-shiftl  ctrll   keycode  78 = U+2213           # ∓ [U+2213] MINUS-OR-PLUS SIGN
-shiftr  ctrll   keycode  78 = U+2213           # ∓ [U+2213] MINUS-OR-PLUS SIGN
-shiftl  altgr   keycode  78 = U+2295           # ⊕ [U+2295] CIRCLED PLUS
-shiftr  altgr   keycode  78 = U+2295           # ⊕ [U+2295] CIRCLED PLUS
-ctrll   altgr   keycode  78 = U+2214           # ∔ [U+2214] DOT PLUS
-
-                keycode  79 = KP_1             # 1 [U+0031] DIGIT ONE
-        shiftl  keycode  79 = U+2666           # ♦ [U+2666] BLACK DIAMOND SUIT
-        shiftr  keycode  79 = U+2666           # ♦ [U+2666] BLACK DIAMOND SUIT
-        altgr   keycode  79 = U+2194           # ↔ [U+2194] LEFT RIGHT ARROW
-        ctrll   keycode  79 = End              # 
-shiftl  ctrll   keycode  79 = End              # 
-shiftr  ctrll   keycode  79 = End              # 
-shiftl  altgr   keycode  79 = U+2264           # ≤ [U+2264] LESS-THAN OR EQUAL TO
-shiftr  altgr   keycode  79 = U+2264           # ≤ [U+2264] LESS-THAN OR EQUAL TO
-ctrll   altgr   keycode  79 = U+230a           # ⌊ [U+230A] LEFT FLOOR
-
-                keycode  80 = KP_2             # 2 [U+0032] DIGIT TWO
-        shiftl  keycode  80 = U+2665           # ♥ [U+2665] BLACK HEART SUIT
-        shiftr  keycode  80 = U+2665           # ♥ [U+2665] BLACK HEART SUIT
-        altgr   keycode  80 = U+2193           # ↓ [U+2193] DOWNWARDS ARROW
-        ctrll   keycode  80 = Down             # 
-shiftl  ctrll   keycode  80 = Down             # 
-shiftr  ctrll   keycode  80 = Down             # 
-shiftl  altgr   keycode  80 = U+222a           # ∪ [U+222A] UNION
-shiftr  altgr   keycode  80 = U+222a           # ∪ [U+222A] UNION
-ctrll   altgr   keycode  80 = U+22c3           # ⋃ [U+22C3] N-ARY UNION
-
-                keycode  81 = KP_3             # 3 [U+0033] DIGIT THREE
-        shiftl  keycode  81 = U+2660           # ♠ [U+2660] BLACK SPADE SUIT
-        shiftr  keycode  81 = U+2660           # ♠ [U+2660] BLACK SPADE SUIT
-        altgr   keycode  81 = U+21cc           # ⇌ [U+21CC] RIGHTWARDS HARPOON OVER LEFTWARDS HARPOON
-        ctrll   keycode  81 = Next             # 
-shiftl  ctrll   keycode  81 = Next             # 
-shiftr  ctrll   keycode  81 = Next             # 
-shiftl  altgr   keycode  81 = U+2265           # ≥ [U+2265] GREATER-THAN OR EQUAL TO
-shiftr  altgr   keycode  81 = U+2265           # ≥ [U+2265] GREATER-THAN OR EQUAL TO
-ctrll   altgr   keycode  81 = U+230b           # ⌋ [U+230B] RIGHT FLOOR
-
-                keycode  82 = KP_0             # 0 [U+0030] DIGIT ZERO
-        shiftl  keycode  82 = U+2423           # ␣ [U+2423] OPEN BOX
-        shiftr  keycode  82 = U+2423           # ␣ [U+2423] OPEN BOX
-        altgr   keycode  82 = percent          # % [U+0025] PERCENT SIGN
-        ctrll   keycode  82 = Insert           # 
-shiftl  ctrll   keycode  82 = Insert           # 
-shiftr  ctrll   keycode  82 = Insert           # 
-shiftl  altgr   keycode  82 = U+2030           # ‰ [U+2030] PER MILLE SIGN
-shiftr  altgr   keycode  82 = U+2030           # ‰ [U+2030] PER MILLE SIGN
-ctrll   altgr   keycode  82 = U+25a1           # □ [U+25A1] WHITE SQUARE
-
-                keycode  83 = KP_Comma         # , [U+002C] COMMA
-        shiftl  keycode  83 = period           # . [U+002E] FULL STOP
-        shiftr  keycode  83 = period           # . [U+002E] FULL STOP
-        altgr   keycode  83 = comma            # , [U+002C] COMMA
-        ctrll   keycode  83 = Remove           # 
-shiftl  ctrll   keycode  83 = Remove           # 
-shiftr  ctrll   keycode  83 = Remove           # 
-shiftl  altgr   keycode  83 = U+2032           # ′ [U+2032] PRIME
-shiftr  altgr   keycode  83 = U+2032           # ′ [U+2032] PRIME
-ctrll   altgr   keycode  83 = U+2033           # ″ [U+2033] DOUBLE PRIME
-
-                keycode  96 = KP_Enter         # 

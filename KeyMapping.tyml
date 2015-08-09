@@ -1,0 +1,21 @@
+﻿{!tyml !ns:<http://hediet.de/neo2-win>}
+{Configuration
+
+	KeyDefinitions:[
+		{KeyDefinition <A> Text:<A> QwertzScanCode:65 QwertzModifiers:[Shift]}
+	]
+
+	Layers:[
+		{Layer <1> ModifierKeys:[
+			[{Key <shift>} {Key <alt>}]
+		]}
+	]
+
+	KeyMappings:[
+		{KeyMapping Layer:<1> ScanCode:2 MapsTo:{Key <A>}}
+	]
+
+	CompositionDefiniton:[
+		{CompositionDefinition [{Key <Multi_key>} {Key <r>} {Key <space>}] <der >}
+	]
+}
