@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E89F306C-BDF3-49BE-90D7-40599E89E483}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Hediet.KeyboardMapper</RootNamespace>
+    <AssemblyName>KeyboardMapper</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Open.WinKeyboardHook">
+      <HintPath>packages\Open.WinKeyboardHook.1.0.10.0\lib\net45\Open.WinKeyboardHook.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Tyml">
+      <HintPath>..\Tyml\TymlCSharp\Tyml\bin\Debug\Tyml.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Config\Configuration.cs" />
+    <Compile Include="Config\KeyDefinition.cs" />
+    <Compile Include="Config\KeyDefinitions.cs" />
+    <Compile Include="Config\KeyMapping.cs" />
+    <Compile Include="Config\CompositionDefinition.cs" />
+    <Compile Include="Config\KeyMappings.cs" />
+    <Compile Include="Config\KeyOrString.cs" />
+    <Compile Include="Config\LayerDefinition.cs" />
+    <Compile Include="Keyboard\IKeyboard.cs" />
+    <Compile Include="Layer\ILayerProvider.cs" />
+    <Compile Include="SemanticKeys\ISemanticKeyMap.cs" />
+    <Compile Include="Keyboard\Key.cs" />
+    <Compile Include="Keyboard\Keyboard.cs" />
+    <Compile Include="Keyboard\KeyPressDirection.cs" />
+    <Compile Include="Keyboard\SendInput\Native\Hardwareinput.cs" />
+    <Compile Include="Keyboard\SendInput\Native\Input.cs" />
+    <Compile Include="Keyboard\SendInput\Native\InputType.cs" />
+    <Compile Include="Keyboard\SendInput\SendInput.cs" />
+    <Compile Include="Keyboard\SendInput\Native\Keybdinput.cs" />
+    <Compile Include="Keyboard\SendInput\Native\KeyboardFlag.cs" />
+    <Compile Include="Keyboard\SendInput\Native\Mouseinput.cs" />
+    <Compile Include="Keyboard\SendInput\Native\Mousekeybdhardwareinput.cs" />
+    <Compile Include="Keyboard\SendInput\Native\NativeMethods.cs" />
+    <Compile Include="Keyboard\SendInput\Native\VirtualKeyCode.cs" />
+    <Compile Include="Keyboard\KeysHelper.cs" />
+    <Compile Include="Keyboard\KeyType.cs" />
+    <Compile Include="Layer\Layer.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SemanticKeys\SemanticKey.cs" />
+    <Compile Include="Keyboard\SendInput\SendInputKeyboard.cs" />
+    <Compile Include="SemanticKeys\SemanticKeyMap.cs" />
+    <Compile Include="Keyboard\WindowsKeyBoardInterceptor.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Data\KeyDefinitions.tyml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\KeyMappings.tyml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
