@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace Hediet.KeyboardMapper
 {
-    static class KeysHelper
+    public static class KeysHelper
     {
         /// <summary>
         /// The set of valid MapTypes used in MapVirtualKey

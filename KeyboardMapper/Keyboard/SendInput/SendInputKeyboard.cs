@@ -1,19 +1,34 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace Hediet.KeyboardMapper
 {
     class SendInputKeyboard : IKeyboard
     {
-        private static int counter;
-        public static bool IsSending { get { return counter != 0; } }
+        private static readonly List<Key> sendingKeys = new List<Key>();
+
+        public static Key[] SendingKeys
+        {
+            get
+            {
+                lock (sendingKeys)
+                {
+                    return sendingKeys.ToArray();
+                }
+            }
+        }
 
 
         public void KeyEvent(Key key, KeyPressDirection pressDirection)
         {
-            counter++;
+            lock (sendingKeys)
+            {
+                sendingKeys.Add(key);
+            }
+            
             if (key.KeyCode == Keys.Packet)
-                throw new Exception("Cannot send packet.");
+                 throw new Exception("Cannot send packet.");
             switch (key.KeyType)
             {
                 case KeyType.Character:
@@ -25,7 +40,11 @@ namespace Hediet.KeyboardMapper
                 default:
                     throw new Exception();
             }
-            counter--;
+            
+            lock (sendingKeys)
+            {
+                sendingKeys.Remove(key);
+            }
         }
     }
 }

@@ -3,7 +3,7 @@
 namespace Hediet.KeyboardMapper.Config
 {
     [TymlObjectType]
-    class KeyDefinitions
+    public class KeyDefinitions
     {
         [CanBeImplicit]
         public KeyDefinition[] Definitions { get; set; }

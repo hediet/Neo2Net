@@ -10,95 +10,174 @@ namespace Hediet.KeyboardMapper
     class Keyboard : IKeyboard
     {
         private readonly IKeyboard targetKeyboard;
+        private readonly ISemanticKeyboard semanticKeyboard;
         private readonly ISemanticKeyMap keyMap;
         private readonly ILayerProvider layerProvider;
-        private readonly IDictionary<string, KeyDefinition> keyDefinitions = new Dictionary<string, KeyDefinition>();
+        
 
-        public Keyboard(IKeyboard targetKeyboard)
+        public Keyboard(IKeyboard targetKeyboard, ISemanticKeyboard semanticKeyboard)
         {
             this.targetKeyboard = targetKeyboard;
+            this.semanticKeyboard = semanticKeyboard;
             var k = new SemanticKeyMap();
             keyMap = k;
             layerProvider = k;
 
-            var defs = TymlSerializer.DeserializeFromFile<KeyDefinitions>("Data/KeyDefinitions.tyml");
+            
+            var defs = TymlSerializerHelper.DeserializeFromFile<CompositionDefinitions>("Data/CompositionDefinitions.tyml");
 
             foreach (var def in defs.Definitions)
-                keyDefinitions[def.Name] = def;
+            {
+                var path = new List<SemanticKey>();
+                var i = 0;
+                foreach (var s in def.Sequence)
+                {
+                    i++;
+                    path.Add(s.ToSemanticKey());
+
+                    if (i < def.Sequence.Length)
+                    {
+                        keySequences[path.ToArray()] = null;
+                    }
+                    else
+                        keySequences[path.ToArray()] = def.Result.First().ToSemanticKey();
+                }
+            }
+
+            modifierKeys = new HashSet<SemanticKey>(layerProvider.ModifierKeys);
         }
 
-        private readonly List<Keys> pressedKeys = new List<Keys>();
-        private readonly Dictionary<Keys, Tuple<SemanticKey, Layer>> keys = new Dictionary<Keys, Tuple<SemanticKey, Layer>>();
+
+        private readonly HashSet<SemanticKey> modifierKeys = new HashSet<SemanticKey>();
+
+        private readonly List<SemanticKey> pressedSemanticKeys = new List<SemanticKey>();
+        private readonly Dictionary<Keys, Tuple<SemanticKey, Layer>> pressedKeys = new Dictionary<Keys, Tuple<SemanticKey, Layer>>();
+
+        private readonly HashSet<SemanticKey> ignoreNextKeyUps = new HashSet<SemanticKey>();
+
+        private readonly Dictionary<SemanticKey[], SemanticKey> keySequences = new Dictionary<SemanticKey[], SemanticKey>(new ArrayComparer<SemanticKey>());
+        private readonly List<SemanticKey> currentKeySequence = new List<SemanticKey>();
+        private SemanticKey sequenceClosure;
+        private SemanticKey sequenceResult;
+
+        private void SemanticKeyEvent(SemanticKey key, KeyPressDirection pressDirection)
+        {
+            if (key.Name == "ToggleMod7" && pressDirection == KeyPressDirection.Up)
+            {
+                if (!pressedSemanticKeys.Remove(new SemanticKey("Mod7", null)))
+                    pressedSemanticKeys.Add(new SemanticKey("Mod7", null));
+            }
+            if (key.Name == "Mod4" && pressDirection == KeyPressDirection.Up)
+                pressedSemanticKeys.Remove(new SemanticKey("Mod7", null));
+
+            semanticKeyboard.KeyEvent(key, pressDirection);
+        }
 
         public void KeyEvent(Key key, KeyPressDirection pressDirection)
         {
-            pressedKeys.Remove(key.KeyCode);
             SemanticKey semanticKey = null;
             Layer layer = null;
-            
+
+
+            Tuple<SemanticKey, Layer> res;
+            if (pressedKeys.TryGetValue(key.KeyCode, out res))
+            {
+                pressedKeys.Remove(key.KeyCode);
+                semanticKey = res.Item1;
+                layer = res.Item2;
+                if (semanticKey != null)
+                    pressedSemanticKeys.Remove(semanticKey);
+            }
+
             if (pressDirection == KeyPressDirection.Down)
             {
-                pressedKeys.Add(key.KeyCode);
-
-                var semanticPressedKeys = new List<SemanticKey>();
-
-                foreach (var k in pressedKeys)
-                {
-                    var newLayer = layerProvider.GetLayer(semanticPressedKeys.ToArray());
-                    if (newLayer != null)
-                        layer = newLayer;
-
-                    if (layer == null)
-                        break;
-
-                    semanticKey = keyMap.GetSemanticKey(k, layer);
-
-                    if (semanticKey != null)
-                        semanticPressedKeys.Add(semanticKey);
-                }
-
-                keys[key.KeyCode] = Tuple.Create(semanticKey, layer);
+                layer = layerProvider.GetLayer(pressedSemanticKeys.ToArray());
+                semanticKey = keyMap.GetSemanticKey(key.KeyCode, layer);
+                
+                pressedKeys[key.KeyCode] = Tuple.Create(semanticKey, layer);
+                if (!pressedSemanticKeys.Contains(semanticKey))
+                    pressedSemanticKeys.Add(semanticKey);
             }
-            else
-            {
-                Tuple<SemanticKey, Layer> res;
-                if (keys.TryGetValue(key.KeyCode, out res))
-                {
-                    semanticKey = res.Item1;
-                    layer = res.Item2;
-                }
-            }
+
+            Console.Write("{0}: ", pressDirection);
 
             if (semanticKey != null)
             {
-                KeyDefinition kd;
-                if (semanticKey.Name != null && keyDefinitions.TryGetValue(semanticKey.Name, out kd))
-                {
-                    var isShiftPressed = pressedKeys.Contains(Keys.LShiftKey) || pressedKeys.Contains(Keys.RShiftKey);
-                    var modifierMatch = true;
-                    if (kd.Modifiers != null)
-                    {
-                        var set1 = new HashSet<QwertzModifier>(kd.Modifiers);
-                        var set2 = new HashSet<QwertzModifier>();
-                        if (isShiftPressed)
-                            set2.Add(QwertzModifier.Shift);
-                        modifierMatch = set1.SetEquals(set2);
-                    }
+                Console.Write("{0}, Layer {1} ", semanticKey, layer);
 
-                    if (kd.QwertzVirtualKeyCode != null && modifierMatch)
-                        targetKeyboard.KeyEvent(new Key((Keys)kd.QwertzVirtualKeyCode), pressDirection);
-                    else if (kd.Text != null)
-                        targetKeyboard.KeyEvent(new Key(kd.Text.First()), pressDirection);
+                if (semanticKey.Equals(sequenceClosure))
+                {
+                    Console.Write("Send sequence result {0}", sequenceResult);
+
+                    if (pressDirection == KeyPressDirection.Up)
+                        sequenceClosure = null;
+                    SemanticKeyEvent(sequenceResult, pressDirection);
                 }
-                else if (semanticKey.Text != null)
-                    targetKeyboard.KeyEvent(new Key(semanticKey.Text.First()), pressDirection);
+                else if (pressDirection == KeyPressDirection.Down)
+                {
+                    if (modifierKeys.Contains(semanticKey) && currentKeySequence.Count > 0)
+                    {
+                        Console.Write("Ignoring modifier key {0} in sequence", semanticKey);
+                        ignoreNextKeyUps.Add(semanticKey);
+                    }
+                    else
+                    {
+                        currentKeySequence.Add(semanticKey);
+                        var path = currentKeySequence.ToArray();
+
+                        if (keySequences.TryGetValue(path, out sequenceResult))
+                        {
+                            if (sequenceResult != null)
+                            {
+                                sequenceClosure = semanticKey;
+                                currentKeySequence.Clear();
+                                SemanticKeyEvent(sequenceResult, pressDirection);
+                                Console.Write("Complete sequence '{0}' with {1}", string.Join("->", (IEnumerable<object>)path), semanticKey);
+                            }
+                            else
+                            {
+                                ignoreNextKeyUps.Add(semanticKey);
+                                Console.Write("Continue sequence '{0}'", string.Join("->", (IEnumerable<object>)path));
+                            }
+                        }
+                        else
+                        {
+                            SemanticKeyEvent(semanticKey, pressDirection);
+
+                            if (currentKeySequence.Count > 1)
+                                Console.Write(" unknown sequence '{0}'", string.Join("->", (IEnumerable<object>)path));
+                            currentKeySequence.Clear();
+                        }
+                    }
+                }
+                else
+                {
+                    if (ignoreNextKeyUps.Contains(semanticKey))
+                        ignoreNextKeyUps.Remove(semanticKey);
+                    else
+                        SemanticKeyEvent(semanticKey, pressDirection);
+                }
             }
             else
-                targetKeyboard.KeyEvent(key, pressDirection);
+            {
+                try
+                {
+                    targetKeyboard.KeyEvent(key, pressDirection);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+                Console.Write("Unmapped key");
+            }
 
-            Console.WriteLine("{0} {1} (Layer {2}, scancode: {3}, virtualcode: {4})", 
-                pressDirection, semanticKey, layer, KeysHelper.ConvertToScanCode(key.KeyCode), (int)key.KeyCode);
+            if (key.KeyCode == Keys.RMenu && pressDirection == KeyPressDirection.Up) // maybe there is a better way
+                targetKeyboard.KeyEvent(new Key(Keys.LControlKey), pressDirection);
 
+
+            Console.Write(" (scancode: {0}, virtualcode: {1})", KeysHelper.ConvertToScanCode(key.KeyCode), (int)key.KeyCode);
+
+            Console.WriteLine();
         }
     }
 }

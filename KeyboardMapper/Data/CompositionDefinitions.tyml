@@ -1,0 +1,43 @@
+{!tyml !ns:<http://hediet.de/neo2-win>}
+{CompositionDefinitions
+    Definitions:[
+        {Composition [ {Key <Compose>} {Key <r>} {Key <space>} ] [ <der > ]}
+        {Composition [ {Key <Compose>} {Key <e>} {Key <space>} ] [ <die > ]}
+        {Composition [ {Key <Compose>} {Key <u>} {Key <space>} ] [ <und > ]}
+        {Composition [ {Key <Compose>} {Key <n>} {Key <space>} ] [ <den > ]}
+        {Composition [ {Key <Compose>} {Key <v>} {Key <space>} ] [ <von > ]}
+        {Composition [ {Key <Compose>} {Key <s>} {Key <space>} ] [ <das > ]}
+        {Composition [ {Key <Compose>} {Key <m>} {Key <space>} ] [ <mit > ]}
+        {Composition [ {Key <Compose>} {Key <c>} {Key <space>} ] [ <sich > ]}
+        {Composition [ {Key <Compose>} {Key <f>} {Key <space>} ] [ <auf > ]}
+        {Composition [ {Key <Compose>} {Key <\u00FC>} {Key <space>} ] [ <f\u00FCr > ]}
+        {Composition [ {Key <Compose>} {Key <i>} {Key <space>} ] [ <ist > ]}
+        {Composition [ {Key <Compose>} {Key <n>} {Key <space>} ] [ <nicht > ]}
+        {Composition [ {Key <Compose>} {Key <1>} {Key <space>} ] [ <ein > ]}
+        {Composition [ {Key <Compose>} {Key <E>} {Key <space>} ] [ <Die > ]}
+        {Composition [ {Key <Compose>} {Key <1>} {Key <e>} {Key <space>} ] [ <eine > ]}
+        {Composition [ {Key <Compose>} {Key <l>} {Key <space>} ] [ <als > ]}
+        {Composition [ {Key <Compose>} {Key <a>} {Key <space>} ] [ <auch > ]}
+        {Composition [ {Key <Compose>} {Key <w>} {Key <n>} {Key <space>} ] [ <werden > ]}
+        {Composition [ {Key <Compose>} {Key <h>} {Key <space>} ] [ <hat > ]}
+        {Composition [ {Key <Compose>} {Key <ssharp>} {Key <space>} ] [ <dass > ]}
+        {Composition [ {Key <Compose>} {Key <w>} {Key <space>} ] [ <wird > ]}
+        {Composition [ {Key <Compose>} {Key <b>} {Key <space>} ] [ <bei > ]}
+        {Composition [ {Key <Compose>} {Key <1>} {Key <r>} {Key <space>} ] [ <einer > ]}
+        {Composition [ {Key <Compose>} {Key <R>} {Key <space>} ] [ <Der > ]}
+        {Composition [ {Key <Compose>} {Key <d>} {Key <space>} ] [ <sind > ]}
+        {Composition [ {Key <Compose>} {Key <1>} {Key <m>} {Key <space>} ] [ <einem > ]}
+        {Composition [ {Key <Compose>} {Key <1>} {Key <n>} {Key <space>} ] [ <einen > ]}
+        {Composition [ {Key <Compose>} {Key <S>} {Key <space>} ] [ <Das > ]}
+        {Composition [ {Key <Compose>} {Key <z>} {Key <space>} ] [ <zum > ]}
+        {Composition [ {Key <Compose>} {Key <h>} {Key <n>} {Key <space>} ] [ <haben > ]}
+        {Composition [ {Key <Compose>} {Key <o>} {Key <space>} ] [ <oder > ]}
+        {Composition [ {Key <Compose>} {Key <h>} {Key <t>} {Key <space>} ] [ <hatte > ]}
+        {Composition [ {Key <Compose>} {Key <k>} {Key <space>} ] [ <kann > ]}
+        {Composition [ {Key <Compose>} {Key <o>} {Key <space>} ] [ <gegen > ]}
+        {Composition [ {Key <Compose>} {Key <k>} {Key <n>} {Key <space>} ] [ <k\u00F6nnen > ]}
+        {Composition [ {Key <Compose>} {Key <J>} {Key <space>} ] [ <Jahr > ]}
+        {Composition [ {Key <Compose>} {Key <j>} {Key <space>} ] [ <jetzt > ]}
+        {Composition [ {Key <Compose>} {Key <p>} {Key <space>} ] [ <sp\u00E4ter > ]}
+    ]
+}

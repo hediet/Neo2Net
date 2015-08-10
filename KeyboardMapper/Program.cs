@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Hediet.KeyboardMapper
@@ -12,28 +13,46 @@ namespace Hediet.KeyboardMapper
         }
     }
 
+    class SemanticDumpKeyboard: ISemanticKeyboard
+    {
+        public void KeyEvent(SemanticKey key, KeyPressDirection pressDirection)
+        {
+            Console.WriteLine(pressDirection + " " + key);
+        }
+    }
 
     class Program
     {
 
+        static void Main5(string[] args)
+        {
+            var kbd = new Keyboard(new DumpKeyboard(), new SemanticDumpKeyboard());
+            kbd.KeyEvent(new Key((Keys)226), KeyPressDirection.Down);
+            kbd.KeyEvent(new Key((Keys)226), KeyPressDirection.Down);
+            
+            Console.ReadLine();
+        }
+
         static void Main(string[] args)
         {
+            Console.BufferWidth = 200;
+
             if (args.Length == 1 && args[0] == "show")
             {
                 Console.WriteLine("Show");
-                var kb2 = new DumpKeyboard();
 
-                using (new WindowsKeyBoardInterceptor(kb2, false))
+                using (new WindowsKeyboardInterceptor(new DumpKeyboard(), false))
                 {
                     Application.Run();
                 }
                 return;
             }
 
+            var icon = new TrayIcon();
 
-            var kb = new Keyboard(new SendInputKeyboard());
+            var sik = new SendInputKeyboard();
 
-            using (new WindowsKeyBoardInterceptor(kb))
+            using (new WindowsKeyboardInterceptor(new Keyboard(sik, new SemanticKeyboard(sik))))
             {
                 Application.Run();
             }

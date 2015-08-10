@@ -2,8 +2,8 @@
 
 namespace Hediet.KeyboardMapper.Config
 {
-    [TymlObjectType]
-    class CompositionDefinition
+    [TymlObjectType, TymlName("Composition")]
+    public class CompositionDefinition
     {
         [CanBeImplicit]
         public KeyOrString[] Sequence { get; set; }

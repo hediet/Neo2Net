@@ -9,13 +9,14 @@
         {Layer Name:<5> ModifierKeys:[ [ {Key <ShiftL>} {Key <Mod3>} ] ]}
         {Layer Name:<5> ModifierKeys:[ [ {Key <ShiftR>} {Key <Mod3>} ] ]}
         {Layer Name:<6> ModifierKeys:[ [ {Key <Mod3>} {Key <Mod4>} ] ]}
-		{Layer Name:<7> ModifierKeys:[ [ {Key <Mod7>} ] ]}
+		{Layer Name:<7> ModifierKeys:[ [ {Key <Mod4>} {Key <Mod7>} ] ]}
     ]
     Mappings:[
 		{KeyMapping Layer:<7> ScanCode:18 MapsTo:{Key <MouseUp>}}
 		{KeyMapping Layer:<7> ScanCode:33 MapsTo:{Key <MouseRight>}}
 		{KeyMapping Layer:<7> ScanCode:32 MapsTo:{Key <MouseDown>}}
-		{KeyMapping Layer:<7> ScanCode:31 MapsTo:{Key <MouseLeft>}}
+		{KeyMapping Layer:<7> ScanCode:31 MapsTo:{Key <MouseLeft>}} 
+		{KeyMapping Layer:<7> ScanCode:47 MapsTo:{Key <MouseRightClick>}} 
 		{KeyMapping Layer:<7> ScanCode:57 MapsTo:{Key <MouseLeftClick>}}
 
         {KeyMapping Layer:<1> ScanCode:42 MapsTo:{Key <ShiftL>}}
@@ -25,19 +26,19 @@
         {KeyMapping Layer:<1> ScanCode:58 MapsTo:{Key <Mod3>}}
         {KeyMapping Layer:<1> ScanCode:43 MapsTo:{Key <Mod3>}}
         {KeyMapping Layer:<1> ScanCode:86 MapsTo:{Key <Mod4>}}
-        {KeyMapping Layer:<1> ScanCode:56 MapsTo:{Key <Mod4>}}
+        {KeyMapping Layer:<1> ScanCode:56 VirtualCode:165 MapsTo:{Key <Mod4>}}
         {KeyMapping Layer:<2> ScanCode:58 MapsTo:{Key <Mod3>}}
         {KeyMapping Layer:<2> ScanCode:43 MapsTo:{Key <Mod3>}}
         {KeyMapping Layer:<2> ScanCode:86 MapsTo:{Key <Mod4>}}
-        {KeyMapping Layer:<2> ScanCode:56 MapsTo:{Key <Mod4>}}
+        {KeyMapping Layer:<2> ScanCode:56 VirtualCode:165 MapsTo:{Key <Mod4>}}
         {KeyMapping Layer:<3> ScanCode:58 MapsTo:{Key <Mod3>}}
         {KeyMapping Layer:<3> ScanCode:43 MapsTo:{Key <Mod3>}}
         {KeyMapping Layer:<3> ScanCode:86 MapsTo:{Key <Mod4>}}
-        {KeyMapping Layer:<3> ScanCode:56 MapsTo:{Key <Mod4>}}
+        {KeyMapping Layer:<3> ScanCode:56 VirtualCode:165 MapsTo:{Key <Mod4>}}
         {KeyMapping Layer:<4> ScanCode:58 MapsTo:{Key <Mod3>}}
         {KeyMapping Layer:<4> ScanCode:43 MapsTo:{Key <Mod3>}}
         {KeyMapping Layer:<4> ScanCode:86 MapsTo:{Key <Mod4>}}
-        {KeyMapping Layer:<4> ScanCode:56 MapsTo:{Key <Mod4>}}
+        {KeyMapping Layer:<4> ScanCode:56 VirtualCode:165 MapsTo:{Key <Mod4>}}
 
         {KeyMapping Layer:<3> ScanCode:15 MapsTo:{Key <Compose>}}
         {KeyMapping Layer:<1> ScanCode:41 MapsTo:<\u02C6>}
@@ -317,7 +318,7 @@
         {KeyMapping Layer:<5> ScanCode:53 MapsTo:<\u03B8>}
         {KeyMapping Layer:<6> ScanCode:53 MapsTo:<\u0398>}
         {KeyMapping Layer:<1> ScanCode:57 MapsTo:{Key <space>}}
-        {KeyMapping Layer:<4> ScanCode:57 MapsTo:{Key <zero>}}
+        {KeyMapping Layer:<4> ScanCode:57 MapsTo:{Key <ToggleMod7>}}
         {KeyMapping Layer:<5> ScanCode:57 MapsTo:{Key <nobreakspace>}}
         {KeyMapping Layer:<6> ScanCode:57 MapsTo:<\u202F>}
         {KeyMapping Layer:<4> ScanCode:5 MapsTo:{Key <VoidSymbol>}}

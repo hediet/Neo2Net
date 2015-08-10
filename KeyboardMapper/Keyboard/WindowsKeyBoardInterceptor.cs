@@ -1,16 +1,17 @@
 ﻿using System;
+using System.Linq;
 using System.Windows.Forms;
 using Open.WinKeyboardHook;
 
 namespace Hediet.KeyboardMapper
 {
-    class WindowsKeyBoardInterceptor: IDisposable
+    class WindowsKeyboardInterceptor: IDisposable
     {
         private readonly IKeyboard inputKeyboard;
         private readonly bool suppress;
         private readonly KeyboardInterceptor interceptor;
 
-        public WindowsKeyBoardInterceptor(IKeyboard inputKeyboard, bool suppress = true)
+        public WindowsKeyboardInterceptor(IKeyboard inputKeyboard, bool suppress = true)
         {
             if (inputKeyboard == null) throw new ArgumentNullException("inputKeyboard");
             this.inputKeyboard = inputKeyboard;
@@ -24,7 +25,7 @@ namespace Hediet.KeyboardMapper
 
         private void InterceptorOnKeyUp(object sender, KeyEventArgs e)
         {
-            if (!SendInputKeyboard.IsSending && e.KeyCode != Keys.None)
+            if (!SendInputKeyboard.SendingKeys.Contains(new Key(e.KeyCode)) && e.KeyCode != Keys.None)
             {
                 inputKeyboard.KeyEvent(new Key(e.KeyCode), KeyPressDirection.Up);
                 e.SuppressKeyPress = suppress;
@@ -33,7 +34,7 @@ namespace Hediet.KeyboardMapper
 
         private void InterceptorOnKeyDown(object sender, KeyEventArgs e)
         {
-            if (!SendInputKeyboard.IsSending && e.KeyCode != Keys.None)
+            if (!SendInputKeyboard.SendingKeys.Contains(new Key(e.KeyCode)) && e.KeyCode != Keys.None)
             {
                 inputKeyboard.KeyEvent(new Key(e.KeyCode), KeyPressDirection.Down);
                 e.SuppressKeyPress = suppress;

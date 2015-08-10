@@ -1,9 +1,10 @@
-﻿using System.Globalization;
+﻿using System;
+using System.Globalization;
 using System.Windows.Forms;
 
 namespace Hediet.KeyboardMapper
 {
-    class Key
+    class Key : IEquatable<Key>
     {
         public Key(char character)
         {
@@ -30,6 +31,32 @@ namespace Hediet.KeyboardMapper
                 return KeyCode.ToString();
             
             return Character.ToString(CultureInfo.InvariantCulture);
+        }
+
+        public bool Equals(Key other)
+        {
+            if (ReferenceEquals(null, other)) return false;
+            if (ReferenceEquals(this, other)) return true;
+            return KeyType == other.KeyType && Character == other.Character && KeyCode == other.KeyCode;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            if (ReferenceEquals(this, obj)) return true;
+            if (obj.GetType() != this.GetType()) return false;
+            return Equals((Key) obj);
+        }
+
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                var hashCode = (int) KeyType;
+                hashCode = (hashCode*397) ^ Character.GetHashCode();
+                hashCode = (hashCode*397) ^ (int) KeyCode;
+                return hashCode;
+            }
         }
     }
 }

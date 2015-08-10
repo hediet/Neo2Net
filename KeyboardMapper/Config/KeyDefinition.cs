@@ -2,13 +2,13 @@
 
 namespace Hediet.KeyboardMapper.Config
 {
-    enum QwertzModifier
+    public enum QwertzModifier
     {
         Shift, Alt, Strg
     }
 
     [TymlObjectType]
-    class KeyDefinition
+    public class KeyDefinition
     {
         [CanBeImplicit]
         public string Name { get; set; }

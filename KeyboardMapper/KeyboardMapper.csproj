@@ -37,17 +37,20 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="Tyml">
-      <HintPath>..\Tyml\TymlCSharp\Tyml\bin\Debug\Tyml.dll</HintPath>
+    <Reference Include="Tyml, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Tyml\TymlCSharp\Tyml\bin\Debug\Tyml.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Config\CompositionDefinitions.cs" />
     <Compile Include="Config\Configuration.cs" />
     <Compile Include="Config\KeyDefinition.cs" />
     <Compile Include="Config\KeyDefinitions.cs" />
@@ -56,8 +59,18 @@
     <Compile Include="Config\KeyMappings.cs" />
     <Compile Include="Config\KeyOrString.cs" />
     <Compile Include="Config\LayerDefinition.cs" />
+    <Compile Include="Keyboard\ArrayComparer.cs" />
     <Compile Include="Keyboard\IKeyboard.cs" />
+    <Compile Include="Keyboard\ISemanticKeyboard.cs" />
+    <Compile Include="Keyboard\SemanticKeyboard.cs" />
     <Compile Include="Layer\ILayerProvider.cs" />
+    <Compile Include="TrayIcon.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TrayIcon.Designer.cs">
+      <DependentUpon>TrayIcon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mouse.cs" />
     <Compile Include="SemanticKeys\ISemanticKeyMap.cs" />
     <Compile Include="Keyboard\Key.cs" />
     <Compile Include="Keyboard\Keyboard.cs" />
@@ -80,10 +93,13 @@
     <Compile Include="SemanticKeys\SemanticKey.cs" />
     <Compile Include="Keyboard\SendInput\SendInputKeyboard.cs" />
     <Compile Include="SemanticKeys\SemanticKeyMap.cs" />
-    <Compile Include="Keyboard\WindowsKeyBoardInterceptor.cs" />
+    <Compile Include="Keyboard\WindowsKeyboardInterceptor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Data\CompositionDefinitions.tyml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Data\KeyDefinitions.tyml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -91,6 +107,14 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TrayIcon.resx">
+      <DependentUpon>TrayIcon.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\neo_disabled.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

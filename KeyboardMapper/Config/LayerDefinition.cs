@@ -3,7 +3,7 @@
 namespace Hediet.KeyboardMapper.Config
 {
     [TymlObjectType, TymlName("Layer")]
-    class LayerDefinition
+    public class LayerDefinition
     {
         public string Name { get; set; }
 

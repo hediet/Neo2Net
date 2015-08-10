@@ -3,25 +3,25 @@
 namespace Hediet.KeyboardMapper.Config
 {
     [StringWrapper(typeof(CharSequence)), TymlUnionType]
-    abstract class KeyOrString
+    public abstract class KeyOrString
     {
-        public abstract SemanticKey ToSemanticKey();
+        internal abstract SemanticKey ToSemanticKey();
     }
 
     [TymlObjectType, TymlName("Key")]
-    class KeyReference : KeyOrString
+    public class KeyReference : KeyOrString
     {
         [CanBeImplicit]
         public string Name { get; set; }
 
-        public override SemanticKey ToSemanticKey()
+        internal override SemanticKey ToSemanticKey()
         {
             return new SemanticKey(Name, null);
         }
     }
 
     [TymlStringType]
-    class CharSequence : KeyOrString
+    public class CharSequence : KeyOrString
     {
         public CharSequence(string value) { Value = value; }
 
@@ -32,7 +32,7 @@ namespace Hediet.KeyboardMapper.Config
             return Value;
         }
 
-        public override SemanticKey ToSemanticKey()
+        internal override SemanticKey ToSemanticKey()
         {
             return new SemanticKey(null, Value);
         }
