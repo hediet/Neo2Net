@@ -9,8 +9,15 @@
         {Layer Name:<5> ModifierKeys:[ [ {Key <ShiftL>} {Key <Mod3>} ] ]}
         {Layer Name:<5> ModifierKeys:[ [ {Key <ShiftR>} {Key <Mod3>} ] ]}
         {Layer Name:<6> ModifierKeys:[ [ {Key <Mod3>} {Key <Mod4>} ] ]}
+		{Layer Name:<7> ModifierKeys:[ [ {Key <Mod7>} ] ]}
     ]
     Mappings:[
+		{KeyMapping Layer:<7> ScanCode:18 MapsTo:{Key <MouseUp>}}
+		{KeyMapping Layer:<7> ScanCode:33 MapsTo:{Key <MouseRight>}}
+		{KeyMapping Layer:<7> ScanCode:32 MapsTo:{Key <MouseDown>}}
+		{KeyMapping Layer:<7> ScanCode:31 MapsTo:{Key <MouseLeft>}}
+		{KeyMapping Layer:<7> ScanCode:57 MapsTo:{Key <MouseLeftClick>}}
+
         {KeyMapping Layer:<1> ScanCode:42 MapsTo:{Key <ShiftL>}}
         {KeyMapping Layer:<2> ScanCode:42 MapsTo:{Key <Caps_Lock>}}
         {KeyMapping Layer:<1> ScanCode:54 MapsTo:{Key <ShiftR>}}
@@ -18,19 +25,19 @@
         {KeyMapping Layer:<1> ScanCode:58 MapsTo:{Key <Mod3>}}
         {KeyMapping Layer:<1> ScanCode:43 MapsTo:{Key <Mod3>}}
         {KeyMapping Layer:<1> ScanCode:86 MapsTo:{Key <Mod4>}}
-        {KeyMapping Layer:<1> ScanCode:100 MapsTo:{Key <Mod4>}}
+        {KeyMapping Layer:<1> ScanCode:56 MapsTo:{Key <Mod4>}}
         {KeyMapping Layer:<2> ScanCode:58 MapsTo:{Key <Mod3>}}
         {KeyMapping Layer:<2> ScanCode:43 MapsTo:{Key <Mod3>}}
         {KeyMapping Layer:<2> ScanCode:86 MapsTo:{Key <Mod4>}}
-        {KeyMapping Layer:<2> ScanCode:100 MapsTo:{Key <Mod4>}}
+        {KeyMapping Layer:<2> ScanCode:56 MapsTo:{Key <Mod4>}}
         {KeyMapping Layer:<3> ScanCode:58 MapsTo:{Key <Mod3>}}
         {KeyMapping Layer:<3> ScanCode:43 MapsTo:{Key <Mod3>}}
         {KeyMapping Layer:<3> ScanCode:86 MapsTo:{Key <Mod4>}}
-        {KeyMapping Layer:<3> ScanCode:100 MapsTo:{Key <Mod4>}}
+        {KeyMapping Layer:<3> ScanCode:56 MapsTo:{Key <Mod4>}}
         {KeyMapping Layer:<4> ScanCode:58 MapsTo:{Key <Mod3>}}
         {KeyMapping Layer:<4> ScanCode:43 MapsTo:{Key <Mod3>}}
         {KeyMapping Layer:<4> ScanCode:86 MapsTo:{Key <Mod4>}}
-        {KeyMapping Layer:<4> ScanCode:100 MapsTo:{Key <Mod4>}}
+        {KeyMapping Layer:<4> ScanCode:56 MapsTo:{Key <Mod4>}}
 
         {KeyMapping Layer:<3> ScanCode:15 MapsTo:{Key <Compose>}}
         {KeyMapping Layer:<1> ScanCode:41 MapsTo:<\u02C6>}
@@ -112,67 +119,67 @@
         {KeyMapping Layer:<5> ScanCode:13 MapsTo:<\u1FFE>}
         {KeyMapping Layer:<6> ScanCode:13 MapsTo:{Key <macron>}}
         {KeyMapping Layer:<1> ScanCode:16 MapsTo:{Key <x>}}
-        {KeyMapping Layer:<2> ScanCode:16 MapsTo:{Key <+X>}}
+        {KeyMapping Layer:<2> ScanCode:16 MapsTo:{Key <X>}}
         {KeyMapping Layer:<3> ScanCode:16 MapsTo:<\u2026>}
         {KeyMapping Layer:<4> ScanCode:16 MapsTo:<\u21DE>}
         {KeyMapping Layer:<5> ScanCode:16 MapsTo:<\u03BE>}
         {KeyMapping Layer:<6> ScanCode:16 MapsTo:<\u039E>}
         {KeyMapping Layer:<1> ScanCode:17 MapsTo:{Key <v>}}
-        {KeyMapping Layer:<2> ScanCode:17 MapsTo:{Key <+V>}}
+        {KeyMapping Layer:<2> ScanCode:17 MapsTo:{Key <V>}}
         {KeyMapping Layer:<3> ScanCode:17 MapsTo:{Key <underscore>}}
         {KeyMapping Layer:<4> ScanCode:17 MapsTo:<\u232B>}
         {KeyMapping Layer:<5> ScanCode:17 MapsTo:{Key <space>}}
         {KeyMapping Layer:<6> ScanCode:17 MapsTo:<\u221A>}
         {KeyMapping Layer:<1> ScanCode:18 MapsTo:{Key <l>}}
-        {KeyMapping Layer:<2> ScanCode:18 MapsTo:{Key <+L>}}
+        {KeyMapping Layer:<2> ScanCode:18 MapsTo:{Key <L>}}
         {KeyMapping Layer:<3> ScanCode:18 MapsTo:{Key <bracketleft>}}
         {KeyMapping Layer:<4> ScanCode:18 MapsTo:<\u21E1>}
         {KeyMapping Layer:<5> ScanCode:18 MapsTo:<\u03BB>}
         {KeyMapping Layer:<6> ScanCode:18 MapsTo:<\u039B>}
         {KeyMapping Layer:<1> ScanCode:19 MapsTo:{Key <c>}}
-        {KeyMapping Layer:<2> ScanCode:19 MapsTo:{Key <+C>}}
+        {KeyMapping Layer:<2> ScanCode:19 MapsTo:{Key <C>}}
         {KeyMapping Layer:<3> ScanCode:19 MapsTo:{Key <bracketright>}}
         {KeyMapping Layer:<4> ScanCode:19 MapsTo:<\u2326>}
         {KeyMapping Layer:<5> ScanCode:19 MapsTo:<\u03C7>}
         {KeyMapping Layer:<6> ScanCode:19 MapsTo:<\u2102>}
         {KeyMapping Layer:<1> ScanCode:20 MapsTo:{Key <w>}}
-        {KeyMapping Layer:<2> ScanCode:20 MapsTo:{Key <+W>}}
+        {KeyMapping Layer:<2> ScanCode:20 MapsTo:{Key <W>}}
         {KeyMapping Layer:<3> ScanCode:20 MapsTo:{Key <asciicircum>}}
         {KeyMapping Layer:<4> ScanCode:20 MapsTo:<\u21DF>}
         {KeyMapping Layer:<5> ScanCode:20 MapsTo:<\u03C9>}
         {KeyMapping Layer:<6> ScanCode:20 MapsTo:<\u03A9>}
         {KeyMapping Layer:<1> ScanCode:21 MapsTo:{Key <k>}}
-        {KeyMapping Layer:<2> ScanCode:21 MapsTo:{Key <+K>}}
+        {KeyMapping Layer:<2> ScanCode:21 MapsTo:{Key <K>}}
         {KeyMapping Layer:<3> ScanCode:21 MapsTo:{Key <exclam>}}
         {KeyMapping Layer:<4> ScanCode:21 MapsTo:{Key <exclamdown>}}
         {KeyMapping Layer:<5> ScanCode:21 MapsTo:<\u03BA>}
         {KeyMapping Layer:<6> ScanCode:21 MapsTo:{Key <multiply>}}
         {KeyMapping Layer:<1> ScanCode:22 MapsTo:{Key <h>}}
-        {KeyMapping Layer:<2> ScanCode:22 MapsTo:{Key <+H>}}
+        {KeyMapping Layer:<2> ScanCode:22 MapsTo:{Key <H>}}
         {KeyMapping Layer:<3> ScanCode:22 MapsTo:{Key <less>}}
         {KeyMapping Layer:<4> ScanCode:22 MapsTo:{Key <seven>}}
         {KeyMapping Layer:<5> ScanCode:22 MapsTo:<\u03C8>}
         {KeyMapping Layer:<6> ScanCode:22 MapsTo:<\u03A8>}
         {KeyMapping Layer:<1> ScanCode:23 MapsTo:{Key <g>}}
-        {KeyMapping Layer:<2> ScanCode:23 MapsTo:{Key <+G>}}
+        {KeyMapping Layer:<2> ScanCode:23 MapsTo:{Key <G>}}
         {KeyMapping Layer:<3> ScanCode:23 MapsTo:{Key <greater>}}
         {KeyMapping Layer:<4> ScanCode:23 MapsTo:{Key <eight>}}
         {KeyMapping Layer:<5> ScanCode:23 MapsTo:<\u03B3>}
         {KeyMapping Layer:<6> ScanCode:23 MapsTo:<\u0393>}
         {KeyMapping Layer:<1> ScanCode:24 MapsTo:{Key <f>}}
-        {KeyMapping Layer:<2> ScanCode:24 MapsTo:{Key <+F>}}
+        {KeyMapping Layer:<2> ScanCode:24 MapsTo:{Key <F>}}
         {KeyMapping Layer:<3> ScanCode:24 MapsTo:{Key <equal>}}
         {KeyMapping Layer:<4> ScanCode:24 MapsTo:{Key <nine>}}
         {KeyMapping Layer:<5> ScanCode:24 MapsTo:<\u03C6>}
         {KeyMapping Layer:<6> ScanCode:24 MapsTo:<\u03A6>}
         {KeyMapping Layer:<1> ScanCode:25 MapsTo:{Key <q>}}
-        {KeyMapping Layer:<2> ScanCode:25 MapsTo:{Key <+Q>}}
+        {KeyMapping Layer:<2> ScanCode:25 MapsTo:{Key <Q>}}
         {KeyMapping Layer:<3> ScanCode:25 MapsTo:{Key <ampersand>}}
         {KeyMapping Layer:<4> ScanCode:25 MapsTo:{Key <plus>}}
         {KeyMapping Layer:<5> ScanCode:25 MapsTo:<\u03D5>}
         {KeyMapping Layer:<6> ScanCode:25 MapsTo:<\u211A>}
         {KeyMapping Layer:<1> ScanCode:26 MapsTo:{Key <ssharp>}}
-        {KeyMapping Layer:<2> ScanCode:26 MapsTo:{Key <+U+1e9e>}}
+        {KeyMapping Layer:<2> ScanCode:26 MapsTo:<\u1E9E>}
         {KeyMapping Layer:<3> ScanCode:26 MapsTo:<\u017F>}
         {KeyMapping Layer:<4> ScanCode:26 MapsTo:<\u2212>}
         {KeyMapping Layer:<5> ScanCode:26 MapsTo:<\u03C2>}
@@ -184,109 +191,109 @@
         {KeyMapping Layer:<5> ScanCode:27 MapsTo:<\u1FBF>}
         {KeyMapping Layer:<6> ScanCode:27 MapsTo:<\u02D8>}
         {KeyMapping Layer:<1> ScanCode:30 MapsTo:{Key <u>}}
-        {KeyMapping Layer:<2> ScanCode:30 MapsTo:{Key <+U>}}
+        {KeyMapping Layer:<2> ScanCode:30 MapsTo:{Key <U>}}
         {KeyMapping Layer:<3> ScanCode:30 MapsTo:{Key <backslash>}}
         {KeyMapping Layer:<4> ScanCode:30 MapsTo:<\u21F1>}
         {KeyMapping Layer:<5> ScanCode:30 MapsTo:{Key <space>}}
         {KeyMapping Layer:<6> ScanCode:30 MapsTo:<\u2282>}
         {KeyMapping Layer:<1> ScanCode:31 MapsTo:{Key <i>}}
-        {KeyMapping Layer:<2> ScanCode:31 MapsTo:{Key <+I>}}
+        {KeyMapping Layer:<2> ScanCode:31 MapsTo:{Key <I>}}
         {KeyMapping Layer:<3> ScanCode:31 MapsTo:{Key <slash>}}
         {KeyMapping Layer:<4> ScanCode:31 MapsTo:<\u21E0>}
         {KeyMapping Layer:<5> ScanCode:31 MapsTo:<\u03B9>}
         {KeyMapping Layer:<6> ScanCode:31 MapsTo:<\u222B>}
         {KeyMapping Layer:<1> ScanCode:32 MapsTo:{Key <a>}}
-        {KeyMapping Layer:<2> ScanCode:32 MapsTo:{Key <+A>}}
+        {KeyMapping Layer:<2> ScanCode:32 MapsTo:{Key <A>}}
         {KeyMapping Layer:<3> ScanCode:32 MapsTo:{Key <braceleft>}}
         {KeyMapping Layer:<4> ScanCode:32 MapsTo:<\u21E3>}
         {KeyMapping Layer:<5> ScanCode:32 MapsTo:<\u03B1>}
         {KeyMapping Layer:<6> ScanCode:32 MapsTo:<\u2200>}
         {KeyMapping Layer:<1> ScanCode:33 MapsTo:{Key <e>}}
-        {KeyMapping Layer:<2> ScanCode:33 MapsTo:{Key <+E>}}
+        {KeyMapping Layer:<2> ScanCode:33 MapsTo:{Key <E>}}
         {KeyMapping Layer:<3> ScanCode:33 MapsTo:{Key <braceright>}}
         {KeyMapping Layer:<4> ScanCode:33 MapsTo:<\u21E2>}
         {KeyMapping Layer:<5> ScanCode:33 MapsTo:<\u03B5>}
         {KeyMapping Layer:<6> ScanCode:33 MapsTo:<\u2203>}
         {KeyMapping Layer:<1> ScanCode:34 MapsTo:{Key <o>}}
-        {KeyMapping Layer:<2> ScanCode:34 MapsTo:{Key <+O>}}
+        {KeyMapping Layer:<2> ScanCode:34 MapsTo:{Key <O>}}
         {KeyMapping Layer:<3> ScanCode:34 MapsTo:{Key <asterisk>}}
         {KeyMapping Layer:<4> ScanCode:34 MapsTo:<\u21F2>}
         {KeyMapping Layer:<5> ScanCode:34 MapsTo:<\u03BF>}
         {KeyMapping Layer:<6> ScanCode:34 MapsTo:<\u2208>}
         {KeyMapping Layer:<1> ScanCode:35 MapsTo:{Key <s>}}
-        {KeyMapping Layer:<2> ScanCode:35 MapsTo:{Key <+S>}}
+        {KeyMapping Layer:<2> ScanCode:35 MapsTo:{Key <S>}}
         {KeyMapping Layer:<3> ScanCode:35 MapsTo:{Key <question>}}
         {KeyMapping Layer:<4> ScanCode:35 MapsTo:{Key <questiondown>}}
         {KeyMapping Layer:<5> ScanCode:35 MapsTo:<\u03C3>}
         {KeyMapping Layer:<6> ScanCode:35 MapsTo:<\u03A3>}
         {KeyMapping Layer:<1> ScanCode:36 MapsTo:{Key <n>}}
-        {KeyMapping Layer:<2> ScanCode:36 MapsTo:{Key <+N>}}
+        {KeyMapping Layer:<2> ScanCode:36 MapsTo:{Key <N>}}
         {KeyMapping Layer:<3> ScanCode:36 MapsTo:{Key <parenleft>}}
         {KeyMapping Layer:<4> ScanCode:36 MapsTo:{Key <four>}}
         {KeyMapping Layer:<5> ScanCode:36 MapsTo:<\u03BD>}
         {KeyMapping Layer:<6> ScanCode:36 MapsTo:<\u2115>}
         {KeyMapping Layer:<1> ScanCode:37 MapsTo:{Key <r>}}
-        {KeyMapping Layer:<2> ScanCode:37 MapsTo:{Key <+R>}}
+        {KeyMapping Layer:<2> ScanCode:37 MapsTo:{Key <R>}}
         {KeyMapping Layer:<3> ScanCode:37 MapsTo:{Key <parenright>}}
         {KeyMapping Layer:<4> ScanCode:37 MapsTo:{Key <five>}}
         {KeyMapping Layer:<5> ScanCode:37 MapsTo:<\u03C1>}
         {KeyMapping Layer:<6> ScanCode:37 MapsTo:<\u211D>}
         {KeyMapping Layer:<1> ScanCode:38 MapsTo:{Key <t>}}
-        {KeyMapping Layer:<2> ScanCode:38 MapsTo:{Key <+T>}}
+        {KeyMapping Layer:<2> ScanCode:38 MapsTo:{Key <T>}}
         {KeyMapping Layer:<3> ScanCode:38 MapsTo:{Key <minus>}}
         {KeyMapping Layer:<4> ScanCode:38 MapsTo:{Key <six>}}
         {KeyMapping Layer:<5> ScanCode:38 MapsTo:<\u03C4>}
         {KeyMapping Layer:<6> ScanCode:38 MapsTo:<\u2202>}
         {KeyMapping Layer:<1> ScanCode:39 MapsTo:{Key <d>}}
-        {KeyMapping Layer:<2> ScanCode:39 MapsTo:{Key <+D>}}
+        {KeyMapping Layer:<2> ScanCode:39 MapsTo:{Key <D>}}
         {KeyMapping Layer:<3> ScanCode:39 MapsTo:{Key <colon>}}
         {KeyMapping Layer:<4> ScanCode:39 MapsTo:{Key <comma>}}
         {KeyMapping Layer:<5> ScanCode:39 MapsTo:<\u03B4>}
         {KeyMapping Layer:<6> ScanCode:39 MapsTo:<\u0394>}
         {KeyMapping Layer:<1> ScanCode:40 MapsTo:{Key <y>}}
-        {KeyMapping Layer:<2> ScanCode:40 MapsTo:{Key <+Y>}}
+        {KeyMapping Layer:<2> ScanCode:40 MapsTo:{Key <Y>}}
         {KeyMapping Layer:<3> ScanCode:40 MapsTo:{Key <at>}}
         {KeyMapping Layer:<4> ScanCode:40 MapsTo:{Key <period>}}
         {KeyMapping Layer:<5> ScanCode:40 MapsTo:<\u03C5>}
         {KeyMapping Layer:<6> ScanCode:40 MapsTo:<\u2207>}
         {KeyMapping Layer:<1> ScanCode:44 MapsTo:{Key <udiaeresis>}}
-        {KeyMapping Layer:<2> ScanCode:44 MapsTo:{Key <+Udiaeresis>}}
+        {KeyMapping Layer:<2> ScanCode:44 MapsTo:{Key <Udiaeresis>}}
         {KeyMapping Layer:<3> ScanCode:44 MapsTo:{Key <numbersign>}}
         {KeyMapping Layer:<4> ScanCode:44 MapsTo:<\u2327>}
         {KeyMapping Layer:<5> ScanCode:44 MapsTo:{Key <space>}}
         {KeyMapping Layer:<6> ScanCode:44 MapsTo:<\u222A>}
         {KeyMapping Layer:<1> ScanCode:45 MapsTo:{Key <odiaeresis>}}
-        {KeyMapping Layer:<2> ScanCode:45 MapsTo:{Key <+Odiaeresis>}}
+        {KeyMapping Layer:<2> ScanCode:45 MapsTo:{Key <Odiaeresis>}}
         {KeyMapping Layer:<3> ScanCode:45 MapsTo:{Key <dollar>}}
         {KeyMapping Layer:<4> ScanCode:45 MapsTo:<\u21E5>}
         {KeyMapping Layer:<5> ScanCode:45 MapsTo:<\u03F5>}
         {KeyMapping Layer:<6> ScanCode:45 MapsTo:<\u2229>}
         {KeyMapping Layer:<1> ScanCode:46 MapsTo:{Key <adiaeresis>}}
-        {KeyMapping Layer:<2> ScanCode:46 MapsTo:{Key <+Adiaeresis>}}
+        {KeyMapping Layer:<2> ScanCode:46 MapsTo:{Key <Adiaeresis>}}
         {KeyMapping Layer:<3> ScanCode:46 MapsTo:{Key <bar>}}
         {KeyMapping Layer:<4> ScanCode:46 MapsTo:<\u2380>}
         {KeyMapping Layer:<5> ScanCode:46 MapsTo:<\u03B7>}
         {KeyMapping Layer:<6> ScanCode:46 MapsTo:<\u2135>}
         {KeyMapping Layer:<1> ScanCode:47 MapsTo:{Key <p>}}
-        {KeyMapping Layer:<2> ScanCode:47 MapsTo:{Key <+P>}}
+        {KeyMapping Layer:<2> ScanCode:47 MapsTo:{Key <P>}}
         {KeyMapping Layer:<3> ScanCode:47 MapsTo:{Key <asciitilde>}}
         {KeyMapping Layer:<4> ScanCode:47 MapsTo:<\u21B2>}
         {KeyMapping Layer:<5> ScanCode:47 MapsTo:<\u03C0>}
         {KeyMapping Layer:<6> ScanCode:47 MapsTo:<\u03A0>}
         {KeyMapping Layer:<1> ScanCode:48 MapsTo:{Key <z>}}
-        {KeyMapping Layer:<2> ScanCode:48 MapsTo:{Key <+Z>}}
+        {KeyMapping Layer:<2> ScanCode:48 MapsTo:{Key <Z>}}
         {KeyMapping Layer:<3> ScanCode:48 MapsTo:{Key <grave>}}
         {KeyMapping Layer:<4> ScanCode:48 MapsTo:<\u21B6>}
         {KeyMapping Layer:<5> ScanCode:48 MapsTo:<\u03B6>}
         {KeyMapping Layer:<6> ScanCode:48 MapsTo:<\u2124>}
         {KeyMapping Layer:<1> ScanCode:49 MapsTo:{Key <b>}}
-        {KeyMapping Layer:<2> ScanCode:49 MapsTo:{Key <+B>}}
+        {KeyMapping Layer:<2> ScanCode:49 MapsTo:{Key <B>}}
         {KeyMapping Layer:<3> ScanCode:49 MapsTo:{Key <plus>}}
         {KeyMapping Layer:<4> ScanCode:49 MapsTo:{Key <colon>}}
         {KeyMapping Layer:<5> ScanCode:49 MapsTo:<\u03B2>}
         {KeyMapping Layer:<6> ScanCode:49 MapsTo:<\u21D0>}
         {KeyMapping Layer:<1> ScanCode:50 MapsTo:{Key <m>}}
-        {KeyMapping Layer:<2> ScanCode:50 MapsTo:{Key <+M>}}
+        {KeyMapping Layer:<2> ScanCode:50 MapsTo:{Key <M>}}
         {KeyMapping Layer:<3> ScanCode:50 MapsTo:{Key <percent>}}
         {KeyMapping Layer:<4> ScanCode:50 MapsTo:{Key <one>}}
         {KeyMapping Layer:<5> ScanCode:50 MapsTo:<\u03BC>}
@@ -304,7 +311,7 @@
         {KeyMapping Layer:<5> ScanCode:52 MapsTo:<\u03D1>}
         {KeyMapping Layer:<6> ScanCode:52 MapsTo:<\u21A6>}
         {KeyMapping Layer:<1> ScanCode:53 MapsTo:{Key <j>}}
-        {KeyMapping Layer:<2> ScanCode:53 MapsTo:{Key <+J>}}
+        {KeyMapping Layer:<2> ScanCode:53 MapsTo:{Key <J>}}
         {KeyMapping Layer:<3> ScanCode:53 MapsTo:{Key <semicolon>}}
         {KeyMapping Layer:<4> ScanCode:53 MapsTo:{Key <semicolon>}}
         {KeyMapping Layer:<5> ScanCode:53 MapsTo:<\u03B8>}
@@ -334,7 +341,7 @@
         {KeyMapping Layer:<4> ScanCode:44 MapsTo:{Key <Escape>}}
         {KeyMapping Layer:<5> ScanCode:44 MapsTo:{Key <VoidSymbol>}}
         {KeyMapping Layer:<4> ScanCode:45 MapsTo:{Key <Tab>}}
-        {KeyMapping Layer:<4> ScanCode:46 MapsTo:{Key <Insert>}}
+        {KeyMapping Layer:<4> ScanCode:46 MapsTo:{Key <Mod7>}} {-- Insert --}
         {KeyMapping Layer:<4> ScanCode:47 MapsTo:{Key <Return>}}
         {KeyMapping Layer:<4> ScanCode:48 MapsTo:{Key <VoidSymbol>}}
     ]

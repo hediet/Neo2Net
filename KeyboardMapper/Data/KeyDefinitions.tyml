@@ -73,96 +73,94 @@
         {KeyDefinition <diaeresis> Text:<\u00A8>}
         {KeyDefinition <macron> Text:<\u00AF>}
         {KeyDefinition <x> Text:<x> QwertzVirtualKeyCode:88 Modifiers:[ ]}
-        {KeyDefinition <+X> Text:<X> QwertzVirtualKeyCode:88 Modifiers:[ Shift ]}
+        {KeyDefinition <X> Text:<X> QwertzVirtualKeyCode:88 Modifiers:[ Shift ]}
         {KeyDefinition <v> Text:<v> QwertzVirtualKeyCode:86 Modifiers:[ ]}
-        {KeyDefinition <+V> Text:<V> QwertzVirtualKeyCode:86 Modifiers:[ Shift ]}
+        {KeyDefinition <V> Text:<V> QwertzVirtualKeyCode:86 Modifiers:[ Shift ]}
         {KeyDefinition <underscore> Text:<_> QwertzVirtualKeyCode:189 Modifiers:[ Shift ]}
         {KeyDefinition <l> Text:<l> QwertzVirtualKeyCode:76 Modifiers:[ ]}
-        {KeyDefinition <+L> Text:<L> QwertzVirtualKeyCode:76 Modifiers:[ Shift ]}
+        {KeyDefinition <L> Text:<L> QwertzVirtualKeyCode:76 Modifiers:[ Shift ]}
         {KeyDefinition <bracketleft> Text:<[> QwertzVirtualKeyCode:56 Modifiers:[ Alt ]}
         {KeyDefinition <c> Text:<c> QwertzVirtualKeyCode:67 Modifiers:[ ]}
-        {KeyDefinition <+C> Text:<C> QwertzVirtualKeyCode:67 Modifiers:[ Shift ]}
+        {KeyDefinition <C> Text:<C> QwertzVirtualKeyCode:67 Modifiers:[ Shift ]}
         {KeyDefinition <bracketright> Text:<]> QwertzVirtualKeyCode:57 Modifiers:[ Alt ]}
         {KeyDefinition <w> Text:<w> QwertzVirtualKeyCode:87 Modifiers:[ ]}
-        {KeyDefinition <+W> Text:<W> QwertzVirtualKeyCode:87 Modifiers:[ Shift ]}
+        {KeyDefinition <W> Text:<W> QwertzVirtualKeyCode:87 Modifiers:[ Shift ]}
         {KeyDefinition <asciicircum> Text:<^> QwertzVirtualKeyCode:220 Modifiers:[ ]}
         {KeyDefinition <k> Text:<k> QwertzVirtualKeyCode:75 Modifiers:[ ]}
-        {KeyDefinition <+K> Text:<K> QwertzVirtualKeyCode:75 Modifiers:[ Shift ]}
+        {KeyDefinition <K> Text:<K> QwertzVirtualKeyCode:75 Modifiers:[ Shift ]}
         {KeyDefinition <exclam> Text:<!> QwertzVirtualKeyCode:49 Modifiers:[ Shift ]}
         {KeyDefinition <exclamdown> Text:<\u00A1>}
         {KeyDefinition <multiply> Text:<\u00D7>}
         {KeyDefinition <h> Text:<h> QwertzVirtualKeyCode:72 Modifiers:[ ]}
-        {KeyDefinition <+H> Text:<H> QwertzVirtualKeyCode:72 Modifiers:[ Shift ]}
+        {KeyDefinition <H> Text:<H> QwertzVirtualKeyCode:72 Modifiers:[ Shift ]}
         {KeyDefinition <less> Text:<\<> QwertzVirtualKeyCode:226 Modifiers:[ ]}
         {KeyDefinition <g> Text:<g> QwertzVirtualKeyCode:71 Modifiers:[ ]}
-        {KeyDefinition <+G> Text:<G> QwertzVirtualKeyCode:71 Modifiers:[ Shift ]}
+        {KeyDefinition <G> Text:<G> QwertzVirtualKeyCode:71 Modifiers:[ Shift ]}
         {KeyDefinition <greater> Text:<\>> QwertzVirtualKeyCode:226 Modifiers:[ Shift ]}
         {KeyDefinition <f> Text:<f> QwertzVirtualKeyCode:70 Modifiers:[ ]}
-        {KeyDefinition <+F> Text:<F> QwertzVirtualKeyCode:70 Modifiers:[ Shift ]}
+        {KeyDefinition <F> Text:<F> QwertzVirtualKeyCode:70 Modifiers:[ Shift ]}
         {KeyDefinition <equal> Text:<=> QwertzVirtualKeyCode:48 Modifiers:[ Shift ]}
         {KeyDefinition <q> Text:<q> QwertzVirtualKeyCode:81 Modifiers:[ ]}
-        {KeyDefinition <+Q> Text:<Q> QwertzVirtualKeyCode:81 Modifiers:[ Shift ]}
+        {KeyDefinition <Q> Text:<Q> QwertzVirtualKeyCode:81 Modifiers:[ Shift ]}
         {KeyDefinition <ampersand> Text:<&> QwertzVirtualKeyCode:54 Modifiers:[ Shift ]}
         {KeyDefinition <plus> Text:<+> QwertzVirtualKeyCode:187 Modifiers:[ ]}
         {KeyDefinition <ssharp> Text:<\u00DF> QwertzVirtualKeyCode:219 Modifiers:[ ]}
-        {KeyDefinition <+U+1e9e> Text:<\u1E9E>}
         {KeyDefinition <acute> Text:<\u00B4> QwertzVirtualKeyCode:221 Modifiers:[ ]}
         {KeyDefinition <u> Text:<u> QwertzVirtualKeyCode:85 Modifiers:[ ]}
-        {KeyDefinition <+U> Text:<U> QwertzVirtualKeyCode:85 Modifiers:[ Shift ]}
+        {KeyDefinition <U> Text:<U> QwertzVirtualKeyCode:85 Modifiers:[ Shift ]}
         {KeyDefinition <backslash> Text:<\\> QwertzVirtualKeyCode:219 Modifiers:[ Alt ]}
         {KeyDefinition <i> Text:<i> QwertzVirtualKeyCode:73 Modifiers:[ ]}
-        {KeyDefinition <+I> Text:<I> QwertzVirtualKeyCode:73 Modifiers:[ Shift ]}
+        {KeyDefinition <I> Text:<I> QwertzVirtualKeyCode:73 Modifiers:[ Shift ]}
         {KeyDefinition <a> Text:<a> QwertzVirtualKeyCode:65 Modifiers:[ ]}
-        {KeyDefinition <+A> Text:<A> QwertzVirtualKeyCode:65 Modifiers:[ Shift ]}
+        {KeyDefinition <A> Text:<A> QwertzVirtualKeyCode:65 Modifiers:[ Shift ]}
         {KeyDefinition <braceleft> Text:<{> QwertzVirtualKeyCode:55 Modifiers:[ Alt ]}
         {KeyDefinition <e> Text:<e> QwertzVirtualKeyCode:69 Modifiers:[ ]}
-        {KeyDefinition <+E> Text:<E> QwertzVirtualKeyCode:69 Modifiers:[ Shift ]}
+        {KeyDefinition <E> Text:<E> QwertzVirtualKeyCode:69 Modifiers:[ Shift ]}
         {KeyDefinition <braceright> Text:<}> QwertzVirtualKeyCode:48 Modifiers:[ Alt ]}
         {KeyDefinition <o> Text:<o> QwertzVirtualKeyCode:79 Modifiers:[ ]}
-        {KeyDefinition <+O> Text:<O> QwertzVirtualKeyCode:79 Modifiers:[ Shift ]}
+        {KeyDefinition <O> Text:<O> QwertzVirtualKeyCode:79 Modifiers:[ Shift ]}
         {KeyDefinition <s> Text:<s> QwertzVirtualKeyCode:83 Modifiers:[ ]}
-        {KeyDefinition <+S> Text:<S> QwertzVirtualKeyCode:83 Modifiers:[ Shift ]}
+        {KeyDefinition <S> Text:<S> QwertzVirtualKeyCode:83 Modifiers:[ Shift ]}
         {KeyDefinition <question> Text:<?> QwertzVirtualKeyCode:219 Modifiers:[ Shift ]}
         {KeyDefinition <questiondown> Text:<\u00BF>}
         {KeyDefinition <n> Text:<n> QwertzVirtualKeyCode:78 Modifiers:[ ]}
-        {KeyDefinition <+N> Text:<N> QwertzVirtualKeyCode:78 Modifiers:[ Shift ]}
+        {KeyDefinition <N> Text:<N> QwertzVirtualKeyCode:78 Modifiers:[ Shift ]}
         {KeyDefinition <parenleft> Text:<(> QwertzVirtualKeyCode:56 Modifiers:[ Shift ]}
         {KeyDefinition <r> Text:<r> QwertzVirtualKeyCode:82 Modifiers:[ ]}
-        {KeyDefinition <+R> Text:<R> QwertzVirtualKeyCode:82 Modifiers:[ Shift ]}
+        {KeyDefinition <R> Text:<R> QwertzVirtualKeyCode:82 Modifiers:[ Shift ]}
         {KeyDefinition <parenright> Text:<)> QwertzVirtualKeyCode:57 Modifiers:[ Shift ]}
         {KeyDefinition <t> Text:<t> QwertzVirtualKeyCode:84 Modifiers:[ ]}
-        {KeyDefinition <+T> Text:<T> QwertzVirtualKeyCode:84 Modifiers:[ Shift ]}
+        {KeyDefinition <T> Text:<T> QwertzVirtualKeyCode:84 Modifiers:[ Shift ]}
         {KeyDefinition <d> Text:<d> QwertzVirtualKeyCode:68 Modifiers:[ ]}
-        {KeyDefinition <+D> Text:<D> QwertzVirtualKeyCode:68 Modifiers:[ Shift ]}
+        {KeyDefinition <D> Text:<D> QwertzVirtualKeyCode:68 Modifiers:[ Shift ]}
         {KeyDefinition <colon> Text:<:> QwertzVirtualKeyCode:190 Modifiers:[ Shift ]}
         {KeyDefinition <comma> Text:<,> QwertzVirtualKeyCode:188 Modifiers:[ ]}
         {KeyDefinition <y> Text:<y> QwertzVirtualKeyCode:89 Modifiers:[ ]}
-        {KeyDefinition <+Y> Text:<Y> QwertzVirtualKeyCode:89 Modifiers:[ Shift ]}
+        {KeyDefinition <Y> Text:<Y> QwertzVirtualKeyCode:89 Modifiers:[ Shift ]}
         {KeyDefinition <at> Text:<@> QwertzVirtualKeyCode:81 Modifiers:[ Alt ]}
         {KeyDefinition <udiaeresis> Text:<\u00FC> QwertzVirtualKeyCode:186 Modifiers:[ ]}
-        {KeyDefinition <+Udiaeresis> Text:<\u00DC> QwertzVirtualKeyCode:186 Modifiers:[ Shift ]}
+        {KeyDefinition <Udiaeresis> Text:<\u00DC> QwertzVirtualKeyCode:186 Modifiers:[ Shift ]}
         {KeyDefinition <numbersign> Text:<#> QwertzVirtualKeyCode:191 Modifiers:[ ]}
         {KeyDefinition <odiaeresis> Text:<\u00F6> QwertzVirtualKeyCode:192 Modifiers:[ ]}
-        {KeyDefinition <+Odiaeresis> Text:<\u00D6> QwertzVirtualKeyCode:192 Modifiers:[ Shift ]}
+        {KeyDefinition <Odiaeresis> Text:<\u00D6> QwertzVirtualKeyCode:192 Modifiers:[ Shift ]}
         {KeyDefinition <adiaeresis> Text:<\u00E4> QwertzVirtualKeyCode:222 Modifiers:[ ]}
-        {KeyDefinition <+Adiaeresis> Text:<\u00C4> QwertzVirtualKeyCode:222 Modifiers:[ Shift ]}
+        {KeyDefinition <Adiaeresis> Text:<\u00C4> QwertzVirtualKeyCode:222 Modifiers:[ Shift ]}
         {KeyDefinition <bar> Text:<|> QwertzVirtualKeyCode:226 Modifiers:[ Alt ]}
         {KeyDefinition <p> Text:<p> QwertzVirtualKeyCode:80 Modifiers:[ ]}
-        {KeyDefinition <+P> Text:<P> QwertzVirtualKeyCode:80 Modifiers:[ Shift ]}
+        {KeyDefinition <P> Text:<P> QwertzVirtualKeyCode:80 Modifiers:[ Shift ]}
         {KeyDefinition <asciitilde> Text:<~> QwertzVirtualKeyCode:187 Modifiers:[ Alt ]}
         {KeyDefinition <z> Text:<z> QwertzVirtualKeyCode:90 Modifiers:[ ]}
-        {KeyDefinition <+Z> Text:<Z> QwertzVirtualKeyCode:90 Modifiers:[ Shift ]}
+        {KeyDefinition <Z> Text:<Z> QwertzVirtualKeyCode:90 Modifiers:[ Shift ]}
         {KeyDefinition <b> Text:<b> QwertzVirtualKeyCode:66 Modifiers:[ ]}
-        {KeyDefinition <+B> Text:<B> QwertzVirtualKeyCode:66 Modifiers:[ Shift ]}
+        {KeyDefinition <B> Text:<B> QwertzVirtualKeyCode:66 Modifiers:[ Shift ]}
         {KeyDefinition <m> Text:<m> QwertzVirtualKeyCode:77 Modifiers:[ ]}
-        {KeyDefinition <+M> Text:<M> QwertzVirtualKeyCode:77 Modifiers:[ Shift ]}
+        {KeyDefinition <M> Text:<M> QwertzVirtualKeyCode:77 Modifiers:[ Shift ]}
         {KeyDefinition <percent> Text:<%> QwertzVirtualKeyCode:53 Modifiers:[ Shift ]}
         {KeyDefinition <quotedbl> Text:<"> QwertzVirtualKeyCode:50 Modifiers:[ Shift ]}
         {KeyDefinition <apostrophe> Text:<'> QwertzVirtualKeyCode:191 Modifiers:[ Shift ]}
         {KeyDefinition <j> Text:<j> QwertzVirtualKeyCode:74 Modifiers:[ ]}
-        {KeyDefinition <+J> Text:<J> QwertzVirtualKeyCode:74 Modifiers:[ Shift ]}
+        {KeyDefinition <J> Text:<J> QwertzVirtualKeyCode:74 Modifiers:[ Shift ]}
         {KeyDefinition <semicolon> Text:<;> QwertzVirtualKeyCode:188 Modifiers:[ Shift ]}
         {KeyDefinition <nobreakspace> Text:<\u02DE>}
-        {KeyDefinition <+ssharp> Text:<\u00DF> QwertzVirtualKeyCode:219 Modifiers:[ ]}
     ]
 }
