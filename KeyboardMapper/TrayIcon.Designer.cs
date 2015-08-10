@@ -29,10 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TrayIcon));
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.cmsTrayMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.tsmiDeactivate = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiState = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiExit = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsTrayMenu.SuspendLayout();
@@ -40,24 +39,25 @@
             // notifyIcon
             // 
             this.notifyIcon.ContextMenuStrip = this.cmsTrayMenu;
-            this.notifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon.Icon")));
             this.notifyIcon.Text = "Neo2";
             this.notifyIcon.Visible = true;
             // 
             // cmsTrayMenu
             // 
             this.cmsTrayMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiDeactivate,
+            this.tsmiState,
             this.toolStripSeparator1,
             this.tsmiExit});
             this.cmsTrayMenu.Name = "cmsTrayMenu";
-            this.cmsTrayMenu.Size = new System.Drawing.Size(140, 48);
+            this.cmsTrayMenu.Size = new System.Drawing.Size(121, 54);
             // 
-            // tsmiDeactivate
+            // tsmiState
             // 
-            this.tsmiDeactivate.Name = "tsmiDeactivate";
-            this.tsmiDeactivate.Size = new System.Drawing.Size(139, 22);
-            this.tsmiDeactivate.Text = "Deaktivieren";
+            this.tsmiState.Checked = true;
+            this.tsmiState.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.tsmiState.Name = "tsmiState";
+            this.tsmiState.Size = new System.Drawing.Size(120, 22);
+            this.tsmiState.Text = "Aktiviert";
             // 
             // toolStripSeparator1
             // 
@@ -67,7 +67,7 @@
             // tsmiExit
             // 
             this.tsmiExit.Name = "tsmiExit";
-            this.tsmiExit.Size = new System.Drawing.Size(139, 22);
+            this.tsmiExit.Size = new System.Drawing.Size(120, 22);
             this.tsmiExit.Text = "Beenden";
             this.cmsTrayMenu.ResumeLayout(false);
 
@@ -77,7 +77,7 @@
 
         private System.Windows.Forms.NotifyIcon notifyIcon;
         private System.Windows.Forms.ContextMenuStrip cmsTrayMenu;
-        private System.Windows.Forms.ToolStripMenuItem tsmiDeactivate;
+        private System.Windows.Forms.ToolStripMenuItem tsmiState;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem tsmiExit;
     }

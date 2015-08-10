@@ -27,7 +27,7 @@ namespace Hediet.KeyboardMapper
         {
             if (!SendInputKeyboard.SendingKeys.Contains(new Key(e.KeyCode)) && e.KeyCode != Keys.None)
             {
-                inputKeyboard.KeyEvent(new Key(e.KeyCode), KeyPressDirection.Up);
+                inputKeyboard.HandleKeyEvent(new Key(e.KeyCode), KeyPressDirection.Up);
                 e.SuppressKeyPress = suppress;
             }
         }
@@ -36,7 +36,7 @@ namespace Hediet.KeyboardMapper
         {
             if (!SendInputKeyboard.SendingKeys.Contains(new Key(e.KeyCode)) && e.KeyCode != Keys.None)
             {
-                inputKeyboard.KeyEvent(new Key(e.KeyCode), KeyPressDirection.Down);
+                inputKeyboard.HandleKeyEvent(new Key(e.KeyCode), KeyPressDirection.Down);
                 e.SuppressKeyPress = suppress;
             }
         }

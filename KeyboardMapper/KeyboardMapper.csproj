@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{E89F306C-BDF3-49BE-90D7-40599E89E483}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Hediet.KeyboardMapper</RootNamespace>
     <AssemblyName>KeyboardMapper</AssemblyName>
@@ -30,6 +30,12 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\neo_enabled.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Open.WinKeyboardHook">
@@ -59,10 +65,21 @@
     <Compile Include="Config\KeyMappings.cs" />
     <Compile Include="Config\KeyOrString.cs" />
     <Compile Include="Config\LayerDefinition.cs" />
+    <Compile Include="KeyboardService.cs" />
+    <Compile Include="Keyboard\DumpKeyboard.cs" />
     <Compile Include="Keyboard\ArrayComparer.cs" />
     <Compile Include="Keyboard\IKeyboard.cs" />
-    <Compile Include="Keyboard\ISemanticKeyboard.cs" />
-    <Compile Include="Keyboard\SemanticKeyboard.cs" />
+    <Compile Include="Mouse\IMouse.cs" />
+    <Compile Include="Mouse\MouseButton.cs" />
+    <Compile Include="Mouse\MouseHelper.cs" />
+    <Compile Include="Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SemanticKeys\SemanticDumpKeyboard.cs" />
+    <Compile Include="SemanticKeys\ISemanticKeyboard.cs" />
+    <Compile Include="SemanticKeys\SemanticKeyboard.cs" />
     <Compile Include="Layer\ILayerProvider.cs" />
     <Compile Include="TrayIcon.cs">
       <SubType>Component</SubType>
@@ -70,7 +87,7 @@
     <Compile Include="TrayIcon.Designer.cs">
       <DependentUpon>TrayIcon.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mouse.cs" />
+    <Compile Include="Mouse\WindowsMouse.cs" />
     <Compile Include="SemanticKeys\ISemanticKeyMap.cs" />
     <Compile Include="Keyboard\Key.cs" />
     <Compile Include="Keyboard\Keyboard.cs" />
@@ -109,9 +126,16 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="TrayIcon.resx">
       <DependentUpon>TrayIcon.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\neo_enabled.ico" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\neo_disabled.ico" />

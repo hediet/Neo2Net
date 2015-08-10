@@ -2,6 +2,6 @@
 {
     interface IKeyboard
     {
-        void KeyEvent(Key key, KeyPressDirection pressDirection);
+        void HandleKeyEvent(Key key, KeyPressDirection pressDirection);
     }
 }

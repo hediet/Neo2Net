@@ -20,7 +20,7 @@ namespace Hediet.KeyboardMapper
         }
 
 
-        public void KeyEvent(Key key, KeyPressDirection pressDirection)
+        public void HandleKeyEvent(Key key, KeyPressDirection pressDirection)
         {
             lock (sendingKeys)
             {

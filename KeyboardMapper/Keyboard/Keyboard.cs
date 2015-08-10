@@ -70,10 +70,10 @@ namespace Hediet.KeyboardMapper
             if (key.Name == "Mod4" && pressDirection == KeyPressDirection.Up)
                 pressedSemanticKeys.Remove(new SemanticKey("Mod7", null));
 
-            semanticKeyboard.KeyEvent(key, pressDirection);
+            semanticKeyboard.HandleKeyEvent(key, pressDirection);
         }
 
-        public void KeyEvent(Key key, KeyPressDirection pressDirection)
+        public void HandleKeyEvent(Key key, KeyPressDirection pressDirection)
         {
             SemanticKey semanticKey = null;
             Layer layer = null;
@@ -162,7 +162,7 @@ namespace Hediet.KeyboardMapper
             {
                 try
                 {
-                    targetKeyboard.KeyEvent(key, pressDirection);
+                    targetKeyboard.HandleKeyEvent(key, pressDirection);
                 }
                 catch (Exception e)
                 {
@@ -172,7 +172,7 @@ namespace Hediet.KeyboardMapper
             }
 
             if (key.KeyCode == Keys.RMenu && pressDirection == KeyPressDirection.Up) // maybe there is a better way
-                targetKeyboard.KeyEvent(new Key(Keys.LControlKey), pressDirection);
+                targetKeyboard.HandleKeyEvent(new Key(Keys.LControlKey), pressDirection);
 
 
             Console.Write(" (scancode: {0}, virtualcode: {1})", KeysHelper.ConvertToScanCode(key.KeyCode), (int)key.KeyCode);

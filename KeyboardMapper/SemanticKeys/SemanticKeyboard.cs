@@ -6,6 +6,7 @@ using System.Reflection;
 using System.Threading;
 using System.Windows.Forms;
 using Hediet.KeyboardMapper.Config;
+using Hediet.KeyboardMapper.Mouse;
 using Tyml.Serialization;
 
 namespace Hediet.KeyboardMapper
@@ -45,7 +46,7 @@ namespace Hediet.KeyboardMapper
             };
 
             var times = new Dictionary<SemanticKey, DateTime>();
-            var mouse = new Mouse();
+            var mouse = new WindowsMouse();
 
             while (true)
             {
@@ -74,7 +75,7 @@ namespace Hediet.KeyboardMapper
             }
         }
 
-        public void KeyEvent(SemanticKey semanticKey, KeyPressDirection pressDirection)
+        public void HandleKeyEvent(SemanticKey semanticKey, KeyPressDirection pressDirection)
         {
             pressedKeys.Remove(semanticKey);
 
@@ -89,11 +90,11 @@ namespace Hediet.KeyboardMapper
 
             if (semanticKey.Name == "MouseLeftClick")
             {
-                var m = new Mouse();
+                var m = new WindowsMouse();
                 if (pressDirection == KeyPressDirection.Down)
-                    m.LeftDown();
+                    m.SetButtonState(MouseButton.Left, KeyPressDirection.Down);
                 else
-                    m.LeftUp();
+                    m.SetButtonState(MouseButton.Left, KeyPressDirection.Up);
                 return;
             }
 
@@ -113,12 +114,12 @@ namespace Hediet.KeyboardMapper
                 }
 
                 if (kd.QwertzVirtualKeyCode != null && modifierMatch)
-                    targetKeyboard.KeyEvent(new Key((Keys)kd.QwertzVirtualKeyCode), pressDirection);
+                    targetKeyboard.HandleKeyEvent(new Key((Keys)kd.QwertzVirtualKeyCode), pressDirection);
                 else if (kd.Text != null)
-                    targetKeyboard.KeyEvent(new Key(kd.Text.First()), pressDirection);
+                    targetKeyboard.HandleKeyEvent(new Key(kd.Text.First()), pressDirection);
             }
             else if (semanticKey.Text != null)
-                targetKeyboard.KeyEvent(new Key(semanticKey.Text.First()), pressDirection);
+                targetKeyboard.HandleKeyEvent(new Key(semanticKey.Text.First()), pressDirection);
 
         }
     }

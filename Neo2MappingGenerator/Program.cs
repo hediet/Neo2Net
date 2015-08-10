@@ -1,8 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
+using ConsoleApplicationNeoTest.ConfigGenerator;
+using Hediet.KeyboardMapper.Config;
+using Tyml.Serialization;
 
 namespace Neo2MappingGenerator
 {
@@ -10,6 +15,18 @@ namespace Neo2MappingGenerator
     {
         static void Main(string[] args)
         {
+            var obj =
+                TymlSerializerHelper.DeserializeFromFile<KeyDefinitions>(
+                    @"C:\Henning\Coding\Projects\Neo2Net\KeyboardMapper\Data\KeyDefinitions.tyml");
+
+            XmlSerializer s = new XmlSerializer(typeof(KeyDefinitions));
+            var sw = new StringWriter();
+            s.Serialize(sw, obj);
+
+            Console.WriteLine(sw.ToString());
+
+            Console.ReadLine();
+
             /*
             Action<string> format = f =>
             {
@@ -25,6 +42,7 @@ namespace Neo2MappingGenerator
             */
             //new ConfigGenerator.ConfigGenerator();
 
+            //new ConfigGenerator3();
         }
     }
 }

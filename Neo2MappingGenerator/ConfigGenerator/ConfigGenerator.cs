@@ -7,6 +7,8 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Hediet.KeyboardMapper;
+using Hediet.KeyboardMapper.Config;
 using Tyml.Nodes.Immutable;
 using Tyml.Serialization;
 
@@ -38,12 +40,12 @@ namespace ConsoleApplicationNeoTest.ConfigGenerator
 
             var layers = new[]
             {
-                new Config.LayerDefinition { Name = "1", ModifierKeys = new KeyOrString[][] { } },
-                new Config.LayerDefinition { Name = "2", ModifierKeys = new[] { new KeyOrString[] { new Config.KeyReference { Name = "Shift" } } }},
-                new Config.LayerDefinition { Name = "3", ModifierKeys = new[] { new KeyOrString[] { new Config.KeyReference { Name = "Mod3" } } }},
-                new Config.LayerDefinition { Name = "4", ModifierKeys = new[] { new KeyOrString[] { new Config.KeyReference { Name = "Mod4" } } }},
-                new Config.LayerDefinition { Name = "5", ModifierKeys = new[] { new KeyOrString[] { new Config.KeyReference { Name = "Shift" }, new Config.KeyReference { Name = "Mod3" } } }},
-                new Config.LayerDefinition { Name = "6", ModifierKeys = new[] { new KeyOrString[] { new Config.KeyReference { Name = "Mod3" }, new Config.KeyReference { Name = "Mod4" } } }}
+                new LayerDefinition { Name = "1", ModifierKeys = new KeyOrString[][] { } },
+                new LayerDefinition { Name = "2", ModifierKeys = new[] { new KeyOrString[] { new KeyReference { Name = "Shift" } } }},
+                new LayerDefinition { Name = "3", ModifierKeys = new[] { new KeyOrString[] { new KeyReference { Name = "Mod3" } } }},
+                new LayerDefinition { Name = "4", ModifierKeys = new[] { new KeyOrString[] { new KeyReference { Name = "Mod4" } } }},
+                new LayerDefinition { Name = "5", ModifierKeys = new[] { new KeyOrString[] { new KeyReference { Name = "Shift" }, new KeyReference { Name = "Mod3" } } }},
+                new LayerDefinition { Name = "6", ModifierKeys = new[] { new KeyOrString[] { new KeyReference { Name = "Mod3" }, new KeyReference { Name = "Mod4" } } }}
             };
 
             var serializer = new TymlSerializer();
@@ -152,7 +154,7 @@ namespace ConsoleApplicationNeoTest.ConfigGenerator
                 if (!name.StartsWith("U+"))
                 {
                     GetOrCreateKeyDefinition(name, c);
-                    mapping.MapsTo = new Config.KeyReference() { Name = name };
+                    mapping.MapsTo = new KeyReference() { Name = name };
                 }
                 else
                 {
