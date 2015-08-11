@@ -19,6 +19,7 @@
 		{KeyMapping Layer:<7> ScanCode:47 MapsTo:{Key <MouseRightClick>}} 
 		{KeyMapping Layer:<7> ScanCode:57 MapsTo:{Key <MouseLeftClick>}}
 
+
         {KeyMapping Layer:<1> ScanCode:42 MapsTo:{Key <ShiftL>}}
         {KeyMapping Layer:<2> ScanCode:42 MapsTo:{Key <Caps_Lock>}}
         {KeyMapping Layer:<1> ScanCode:54 MapsTo:{Key <ShiftR>}}

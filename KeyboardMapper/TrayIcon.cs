@@ -22,16 +22,15 @@ namespace Hediet.KeyboardMapper
             
             tsmiExit.Click += (sender, args) => Exited?.Invoke(this, args);
 
-            tsmiState.Click += (sender, args) => SetActivated(!tsmiState.Checked);
-            notifyIcon.DoubleClick += (sender, args) => SetActivatedAndRaiseEvent(!tsmiState.Checked);
+            tsmiState.Click += (sender, args) => RaiseEvent(!tsmiState.Checked);
+            notifyIcon.DoubleClick += (sender, args) => RaiseEvent(!tsmiState.Checked);
 
             SetActivated(true);
         }
 
-        private void SetActivatedAndRaiseEvent(bool status)
+        private void RaiseEvent(bool status)
         {
-            SetActivated(status);
-            if (tsmiState.Checked)
+            if (status)
                 Activated?.Invoke(this, EventArgs.Empty);
             else
                 Deactivated?.Invoke(this, EventArgs.Empty);

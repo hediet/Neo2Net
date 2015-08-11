@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Runtime.Remoting.Messaging;
+using System.Windows.Forms;
 
 namespace Hediet.KeyboardMapper
 {
@@ -13,9 +15,18 @@ namespace Hediet.KeyboardMapper
             targetKeyboard = new Keyboard(sik, new SemanticKeyboard(sik));
         }
 
+        public event EventHandler Activated;
+        public event EventHandler Deactivated;
+
+        public bool IsRunning => interceptor != null;
+
         public void Start()
         {
-            interceptor = new WindowsKeyboardInterceptor(targetKeyboard);
+            if (interceptor == null)
+            {
+                interceptor = new WindowsKeyboardInterceptor(targetKeyboard);
+                Activated?.Invoke(this, EventArgs.Empty);
+            }
         }
 
         public void Stop()
@@ -24,6 +35,7 @@ namespace Hediet.KeyboardMapper
             {
                 interceptor.Dispose();
                 interceptor = null;
+                Deactivated?.Invoke(this, EventArgs.Empty);
             }
         }
 

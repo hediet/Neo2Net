@@ -26,7 +26,7 @@ namespace Hediet.KeyboardMapper
             {
                 sendingKeys.Add(key);
             }
-            
+
             if (key.KeyCode == Keys.Packet)
                  throw new Exception("Cannot send packet.");
             switch (key.KeyType)

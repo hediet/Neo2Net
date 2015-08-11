@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using Open.WinKeyboardHook;
 
@@ -41,8 +42,11 @@ namespace Hediet.KeyboardMapper
             }
         }
 
-        public void Dispose()
+        public async void Dispose()
         {
+            await Task.Delay(100);
+            interceptor.KeyDown -= InterceptorOnKeyDown;
+            interceptor.KeyUp -= InterceptorOnKeyUp;
             interceptor.StopCapturing();
         }
     }

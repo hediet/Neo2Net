@@ -15,7 +15,7 @@
         {KeyDefinition <Up> Text:<\u21E1> QwertzVirtualKeyCode:38}
         {KeyDefinition <Left> Text:<\u21E0> QwertzVirtualKeyCode:37}
         {KeyDefinition <Down> Text:<\u21E3> QwertzVirtualKeyCode:40}
-        {KeyDefinition <Right> Text:<\u21E2> QwertzVirtualKeyCode:37}
+        {KeyDefinition <Right> Text:<\u21E2> QwertzVirtualKeyCode:39}
         {KeyDefinition <BackSpace> Text:<\u0008> QwertzVirtualKeyCode:8}
         {KeyDefinition <Remove> QwertzVirtualKeyCode:46}
         {KeyDefinition <Escape> Text:<\u2327> QwertzVirtualKeyCode:27}

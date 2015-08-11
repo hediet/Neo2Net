@@ -77,17 +77,17 @@ namespace Hediet.KeyboardMapper
 
         public void HandleKeyEvent(SemanticKey semanticKey, KeyPressDirection pressDirection)
         {
-            pressedKeys.Remove(semanticKey);
+            var firstPressEvent = !pressedKeys.Remove(semanticKey);
 
             if (pressDirection == KeyPressDirection.Down)
                 pressedKeys.Add(semanticKey);
 
             pressedKeys2 = pressedKeys.ToArray();
 
-            var lshiftKey = new SemanticKey("LShiftKey", null);
-            var rshiftKey = new SemanticKey("RShiftKey", null);
+            var lshiftKey = new SemanticKey("ShiftL", null);
+            var rshiftKey = new SemanticKey("ShiftR", null);
 
-
+            
             if (semanticKey.Name == "MouseLeftClick")
             {
                 var m = new WindowsMouse();

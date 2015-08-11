@@ -62,9 +62,9 @@ namespace Hediet.KeyboardMapper
 
         private void SemanticKeyEvent(SemanticKey key, KeyPressDirection pressDirection)
         {
-            if (key.Name == "ToggleMod7" && pressDirection == KeyPressDirection.Up)
+            if (key.Name == "ToggleMod7" && pressDirection == KeyPressDirection.Down)
             {
-                if (!pressedSemanticKeys.Remove(new SemanticKey("Mod7", null)))
+                if (!pressedSemanticKeys.Contains(new SemanticKey("Mod7", null)))
                     pressedSemanticKeys.Add(new SemanticKey("Mod7", null));
             }
             if (key.Name == "Mod4" && pressDirection == KeyPressDirection.Up)
