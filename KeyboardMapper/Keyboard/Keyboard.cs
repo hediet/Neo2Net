@@ -175,7 +175,7 @@ namespace Hediet.KeyboardMapper
                 targetKeyboard.HandleKeyEvent(new Key(Keys.LControlKey), pressDirection);
 
 
-            Console.Write(" (scancode: {0}, virtualcode: {1})", KeysHelper.ConvertToScanCode(key.KeyCode), (int)key.KeyCode);
+            Console.Write(" (scancode: {0}, virtualcode: {1} ({2}))", KeysHelper.ConvertToScanCode(key.KeyCode), (int)key.KeyCode, key.KeyCode);
 
             Console.WriteLine();
         }

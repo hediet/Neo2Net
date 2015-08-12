@@ -1,6 +1,15 @@
 {!tyml !ns:<http://hediet.de/neo2-win>}
 {KeyDefinitions
     [
+		{KeyDefinition <LaunchApplication2> QwertzVirtualKeyCode:183}
+		{KeyDefinition <VolumeUp> QwertzVirtualKeyCode:175}
+		{KeyDefinition <VolumeDown> QwertzVirtualKeyCode:174}
+		{KeyDefinition <MediaPreviousTrack> QwertzVirtualKeyCode:177}
+		{KeyDefinition <MediaStop> QwertzVirtualKeyCode:178}
+		{KeyDefinition <MediaNextTrack> QwertzVirtualKeyCode:176}
+		{KeyDefinition <MediaPlayPause> QwertzVirtualKeyCode:179}
+		{KeyDefinition <VolumeMute> QwertzVirtualKeyCode:173}
+
         {KeyDefinition <ShiftL> QwertzVirtualKeyCode:160}
         {KeyDefinition <ShiftR> QwertzVirtualKeyCode:161}
         {KeyDefinition <Caps_Lock> QwertzVirtualKeyCode:20}
