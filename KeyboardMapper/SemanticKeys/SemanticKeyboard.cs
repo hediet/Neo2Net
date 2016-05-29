@@ -70,8 +70,8 @@ namespace Hediet.KeyboardMapper
 
                     delta += Mul(dict[kv.Key], factor);
                 }
-
-                mouse.Position += delta;
+                if (delta != Size.Empty)
+                    mouse.Position += delta;
             }
         }
 

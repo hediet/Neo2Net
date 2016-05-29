@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using Hediet.KeyboardMapper.Config;
 using Tyml.Serialization;
@@ -106,7 +108,7 @@ namespace Hediet.KeyboardMapper
                 Console.Write("{0}, Layer {1} ", semanticKey, layer);
 
                 if (semanticKey.Equals(sequenceClosure))
-                {
+                { 
                     Console.Write("Send sequence result {0}", sequenceResult);
 
                     if (pressDirection == KeyPressDirection.Up)

@@ -1,10 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Runtime.Remoting.Messaging;
 using System.Windows.Forms;
 
 namespace Hediet.KeyboardMapper
 {
-    class KeyboardService: IDisposable
+    class KeyboardService : IDisposable
     {
         private readonly IKeyboard targetKeyboard;
         private WindowsKeyboardInterceptor interceptor;
@@ -24,7 +25,7 @@ namespace Hediet.KeyboardMapper
         {
             if (interceptor == null)
             {
-                interceptor = new WindowsKeyboardInterceptor(targetKeyboard);
+                interceptor = new WindowsKeyboardInterceptor(targetKeyboard, true, new HashSet<Keys>() { Keys.LMenu, Keys.RMenu });
                 Activated?.Invoke(this, EventArgs.Empty);
             }
         }
@@ -42,6 +43,15 @@ namespace Hediet.KeyboardMapper
         public void Dispose()
         {
             Stop();
+        }
+    }
+
+
+    internal class DummyKeyboard : IKeyboard
+    {
+        public void HandleKeyEvent(Key key, KeyPressDirection pressDirection)
+        {
+
         }
     }
 }

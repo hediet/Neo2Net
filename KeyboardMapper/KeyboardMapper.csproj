@@ -38,8 +38,9 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Open.WinKeyboardHook">
-      <HintPath>packages\Open.WinKeyboardHook.1.0.10.0\lib\net45\Open.WinKeyboardHook.dll</HintPath>
+    <Reference Include="Open.WinKeyboardHook, Version=1.0.10.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Open.WinKeyboardHook.1.0.10.0\lib\net45\Open.WinKeyboardHook.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -123,7 +124,6 @@
     <None Include="Data\KeyMappings.tyml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources.resx">
@@ -135,6 +135,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
     <None Include="Resources\neo_enabled.ico" />
   </ItemGroup>
   <ItemGroup>
