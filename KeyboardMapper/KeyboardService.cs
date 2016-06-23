@@ -5,15 +5,30 @@ using System.Windows.Forms;
 
 namespace Hediet.KeyboardMapper
 {
+    enum ServiceMode 
+    {
+        Normal,
+        Sender,
+        Receiver
+    }
+
     class KeyboardService : IDisposable
     {
         private readonly IKeyboard targetKeyboard;
-        private WindowsKeyboardInterceptor interceptor;
+        private IDisposable interceptor;
 
-        public KeyboardService()
+        private ServiceMode mode;
+        private string host;
+        private int? port;
+
+        public KeyboardService(ServiceMode mode, string host = null, int? port = null)
         {
-            var sik = new SendInputKeyboard();
+            var sik = mode == ServiceMode.Sender ? 
+                (IKeyboard)new TcpKeyboard(host, port.Value) : new SendInputKeyboard();
             targetKeyboard = new Keyboard(sik, new SemanticKeyboard(sik));
+            this.mode = mode;
+            this.host = host;
+            this.port = port;
         }
 
         public event EventHandler Activated;
@@ -25,7 +40,12 @@ namespace Hediet.KeyboardMapper
         {
             if (interceptor == null)
             {
-                interceptor = new WindowsKeyboardInterceptor(targetKeyboard, true, new HashSet<Keys>() { Keys.LMenu, Keys.RMenu });
+                if (mode == ServiceMode.Receiver)
+                    interceptor = new TcpKeyboardReceiver(targetKeyboard, host, port.Value);
+                else
+                    interceptor = new WindowsKeyboardInterceptor(
+                        targetKeyboard, true, new HashSet<Keys>() { Keys.LMenu, Keys.RMenu });
+                        
                 Activated?.Invoke(this, EventArgs.Empty);
             }
         }

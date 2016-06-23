@@ -151,7 +151,19 @@ namespace Hediet.KeyboardMapper
     {
         static void Main(string[] args)
         {
-            using (var keyboardService = new KeyboardService())
+            string host = null;
+            int? port = null;
+            ServiceMode mode;
+            if (args.Length != 3)
+                mode = ServiceMode.Normal;
+            else
+            {
+                mode = args[0] == "sender" ? ServiceMode.Sender : ServiceMode.Receiver;
+                host = args[1];
+                port = int.Parse(args[2]);             
+            }
+            
+            using (var keyboardService = new KeyboardService(mode, host, port))
             {
                 keyboardService.Start();
                 using (var icon = new TrayIcon())

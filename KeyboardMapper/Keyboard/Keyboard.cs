@@ -24,7 +24,6 @@ namespace Hediet.KeyboardMapper
             var k = new SemanticKeyMap();
             keyMap = k;
             layerProvider = k;
-
             
             var defs = TymlSerializerHelper.DeserializeFromFile<CompositionDefinitions>("Data/CompositionDefinitions.tyml");
 
