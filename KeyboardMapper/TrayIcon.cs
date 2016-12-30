@@ -40,6 +40,9 @@ namespace Hediet.KeyboardMapper
         {
             tsmiState.Checked = status;
 
+            if (notifyIcon.Container == null)
+                return;
+
             if (status)
                 notifyIcon.Icon = Resources.neo_enabled;
             else

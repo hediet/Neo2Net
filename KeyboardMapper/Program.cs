@@ -149,6 +149,7 @@ namespace Hediet.KeyboardMapper
 
     class Program
     {
+        [STAThread]
         static void Main(string[] args)
         {
             string host = null;

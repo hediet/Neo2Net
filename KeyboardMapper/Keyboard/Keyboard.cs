@@ -15,7 +15,7 @@ namespace Hediet.KeyboardMapper
         private readonly ISemanticKeyboard semanticKeyboard;
         private readonly ISemanticKeyMap keyMap;
         private readonly ILayerProvider layerProvider;
-        
+
 
         public Keyboard(IKeyboard targetKeyboard, ISemanticKeyboard semanticKeyboard)
         {
@@ -24,7 +24,7 @@ namespace Hediet.KeyboardMapper
             var k = new SemanticKeyMap();
             keyMap = k;
             layerProvider = k;
-            
+
             var defs = TymlSerializerHelper.DeserializeFromFile<CompositionDefinitions>("Data/CompositionDefinitions.tyml");
 
             foreach (var def in defs.Definitions)
@@ -76,9 +76,14 @@ namespace Hediet.KeyboardMapper
 
         public void HandleKeyEvent(Key key, KeyPressDirection pressDirection)
         {
+            if (WPFTabTip.TabTip.GetTabTipRectangle().Height != 0)
+            {
+                targetKeyboard.HandleKeyEvent(key, pressDirection);
+                return;
+            }
+
             SemanticKey semanticKey = null;
             Layer layer = null;
-
 
             Tuple<SemanticKey, Layer> res;
             if (pressedKeys.TryGetValue(key.KeyCode, out res))
@@ -94,7 +99,7 @@ namespace Hediet.KeyboardMapper
             {
                 layer = layerProvider.GetLayer(pressedSemanticKeys.ToArray());
                 semanticKey = keyMap.GetSemanticKey(key.KeyCode, layer);
-                
+
                 pressedKeys[key.KeyCode] = Tuple.Create(semanticKey, layer);
                 if (!pressedSemanticKeys.Contains(semanticKey))
                     pressedSemanticKeys.Add(semanticKey);
@@ -107,7 +112,7 @@ namespace Hediet.KeyboardMapper
                 Console.Write("{0}, Layer {1} ", semanticKey, layer);
 
                 if (semanticKey.Equals(sequenceClosure))
-                { 
+                {
                     Console.Write("Send sequence result {0}", sequenceResult);
 
                     if (pressDirection == KeyPressDirection.Up)

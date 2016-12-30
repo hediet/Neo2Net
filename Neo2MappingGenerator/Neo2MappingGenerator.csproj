@@ -103,12 +103,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\KeyboardMapper\KeyboardMapper.csproj">
-      <Project>{e89f306c-bdf3-49be-90d7-40599e89e483}</Project>
-      <Name>KeyboardMapper</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Resources\Compose\README.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
